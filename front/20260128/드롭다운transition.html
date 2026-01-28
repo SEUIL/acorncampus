@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 트랜지션 실습</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #333;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block; /* 메뉴를 가운데 정렬하기 위해 */
+        }
+
+        /* 상위 메뉴 아이템 */
+        nav > ul > li {
+            float: left;
+            position: relative; /* 드롭다운 메뉴의 기준점(부모) 역할 */
+        }
+
+        nav a {
+            display: block;
+            padding: 20px 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s; /* 배경색 변경 부드럽게 */
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* ---------------------------------------드롭다운 메뉴 (숨김 상태)--------------------------------------- */
+        .dropdown {
+            position: absolute;
+            top: 100%; /* 부모 요소 바로 아래 위치 */
+            left: 0;
+            width: 200px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            
+            /* 트랜지션 핵심 속성 */
+            opacity: 0;             /* 투명하게 */
+            visibility: hidden;     /* 마우스 이벤트 차단 및 안 보이게 */
+            transform: translateY(-20px); /* 위쪽으로 20px 올라가 있게 설정 */
+            transition: all 0.4s ease;    /* 0.4초 동안 모든 속성을 부드럽게 변화 */
+            z-index: 100;
+        }
+
+        .dropdown li {
+            width: 100%;
+        }
+
+        .dropdown a {
+            color: #333;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown a:hover {
+            background-color: #f9f9f9;
+            color: #007bff;
+            padding-left: 25px; /* 호버 시 텍스트가 오른쪽으로 쓱 이동하는 효과 */
+        }
+
+        /* 마우스를 올렸을 때 드롭다운 메뉴 보이기 */
+        nav li:hover .dropdown {
+            opacity: 1;             /* 불투명하게 */
+            visibility: visible;    /* 보이게 */
+            transform: translateY(0); /* 원래 위치로 스르륵 내려옴 */
+        }
+        /* --------------------------------------------------------------------------------------------------------------------- */
+        .container {
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">INTRO</a></li>
+            <li>
+                <a href="#">GALLERY ▾</a>
+                <!-- 드롭다운 메뉴 -->
+                <ul class="dropdown">
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">City</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Animals</a></li>
+                </ul>
+            </li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>드롭다운 메뉴에 트랜지션 효과 주기</h1>
+        <p>상단 메뉴의 <strong>GALLERY</strong>에 마우스를 올려보세요.</p>
+    </div>
+</body>
+</html>

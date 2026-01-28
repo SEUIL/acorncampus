@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .origin{
+            perspective: 200px; /*원근감*/
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin: 50px;
+        }
+        .rotatex:hover{
+            transform: rotateX(45deg);
+            /* x축 기준 시계방향 45도 회전 */
+        }
+        .rotatey:hover{
+            transform: rotateY(45deg);
+            /* y축 기준 시계방향 45도 회전 */
+        }
+        .rotatez:hover{
+            transform: rotateZ(45deg);
+            /* z축 기준 시계방향 45도 회전 */
+        }
+        .rotatexyz:hover{
+            transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+            /* x, y, z축 기준 수치만큼 45도 회전 */
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지 3차원 회전하기</h2>
+    <div class="origin">
+        <div class="rotatex"><img src="../images/exampleImage02.jpg" alt="" width="300"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatey"><img src="../images/exampleImage02.jpg" alt="" width="300"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatez"><img src="../images/exampleImage02.jpg" alt="" width="300"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatexyz"><img src="../images/exampleImage02.jpg" alt="" width="300"></div>
+    </div>
+</body>
+</html>

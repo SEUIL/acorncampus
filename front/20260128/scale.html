@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale</title>
+    <style>
+        .origin{
+            border: 1px solid;
+            width: 300px;
+            margin: 50px;
+        }
+        .scalex:hover{
+            transform: scaleX(1.2);
+            /* 가로 1.2배 확대 */
+        }
+        .scaley:hover{
+            transform: scaleY(1.5);
+            /* 세로 1.5배 확대 */
+        }
+        .scale:hover{
+            transform: scale(0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="scalex"><img src="../images/example-stamp.jpg" alt="" width="300"></div>
+    </div>
+    <div class="origin">
+        <div class="scaley"><img src="../images/example-stamp.jpg" alt="" width="300"></div>
+    </div>
+    <div class="origin">
+        <div class="scale"><img src="../images/example-stamp.jpg" alt="" width="300"></div>
+    </div>
+</body>
+</html>

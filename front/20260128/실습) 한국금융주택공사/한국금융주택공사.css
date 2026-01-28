@@ -1,0 +1,309 @@
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "NotoSansKR";
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----------------------------헤더 섹션---------------------------- */
+header {
+  border-bottom: 1px solid #eee;
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  background-color: #fff;
+}
+
+.top-util {
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 13px;
+  color: #0066b3;
+}
+
+.top-util .inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.top-util .guide-links a {
+  margin-right: 15px;
+}
+
+.top-util .user-menu a {
+  margin-left: 15px;
+  color: #555;
+}
+
+.top-util .btn-auth {
+  border: 1px solid #ddd;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.main-nav .inner {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  color: #005691;
+  flex: 1;
+}
+
+.logo span {
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.gnb a {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 25px;
+}
+
+.gnb a:hover {
+  color: #0070bb;
+  border-bottom: 1px solid #0070bb;
+  padding-bottom: 15px;
+}
+
+.nav-utils button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* ----------------------------메인 비주얼 (Hero)---------------------------- */
+.hero {
+  background-color: #ecf0f7;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 32px;
+  color: #005691;
+  /* font-weight: bold; */
+}
+
+.hero p span {
+  font-weight: bold;
+}
+
+/* ----------------------------메인 카드 레이아웃---------------------------- */
+
+.main-cards-wrap {
+    background-color: #ecf0f7;
+}
+
+.main-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  gap: 20px;
+}
+/* ----------------------------호버 애니메이션---------------------------- */
+.card {
+  position: relative;
+  z-index: 1;
+  padding: 35px;
+  width: 32%;
+  text-align:left;
+}
+
+/* 카드의 배경과 테두리를 가상 요소로 분리 */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+
+/* 호버 시 배경 박스의 윗부분만 위로 확장 (아랫면 고정) */
+.card:hover::before {
+  top: -20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* 텍스트 내용물은 위로 이동 */
+.card h3, .card p {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover h3, .card:hover p {
+  transform: translateY(-20px);
+}
+
+.card-img {
+  height: 150px;
+  background: white;
+  margin-top: 30px;
+  line-height: 150px;
+  color: #ccc;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+/* -------------------------------------------------------------------- */
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.card .desc {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.card .highlight-sub {
+  color: #0066b3;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.card .highlight {
+  font-size: 24px;
+  color: #0066b3;
+  font-weight: bold;
+}
+
+.card .highlight span {
+  font-size: 28px;
+}
+
+.card .highlight.blue {
+  color: #005691;
+}
+
+.card-img img {
+  object-fit: cover;
+}
+
+/* ----------------------------퀵 메뉴---------------------------- */
+.quick-menu {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.q-item {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.q-item:hover{
+    transform: translateY(-5px);
+    
+}
+
+.q-item span {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+  color: #0066b3;
+}
+
+.q-item p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ----------------------------하단 정보 그리드---------------------------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 60px;
+}
+
+.notice,
+.app-promo,
+.cs-center {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.notice .title-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.app-promo {
+  background: #fffbe6;
+}
+
+.app-promo button {
+  margin-top: 15px;
+  padding: 5px 15px;
+  border: 1px solid #e2bc1f;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.cs-item {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ----------------------------푸터 영역---------------------------- */
+footer {
+  background: #fcfcfc;
+  border-top: 1px solid #eee;
+  padding: 40px 0;
+}
+
+.f-links {
+  margin-bottom: 20px;
+}
+
+.f-links a {
+  margin-right: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.f-links a.blue {
+  color: blue;
+}
+
+.copy {
+  font-size: 12px;
+  color: #aaa;
+}
