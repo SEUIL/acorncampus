@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            background-color: #f3f3f3;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(300px, auto);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .card {
+            background-color: #e4e4e4;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card .img-box {
+            width: 100%;
+            height: 200px;
+            background-color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/1.jpg" alt="이미지"></div>
+            <p>1번</p>
+        </div>
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/2.jpg" alt="이미지"></div>
+            <p>2번</p>
+        </div>
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/3.jpg" alt="이미지"></div>
+            <p>3번</p>
+        </div>
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/4.jpg" alt="이미지"></div>
+            <p>4번</p>
+        </div>
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/5.jpg" alt="이미지"></div>
+            <p>5번</p>
+        </div>
+        <div class="card">
+            <h3>Lorem ipsum dolor</h3>
+            <div class="img-box"><img src="../images/6.jpg" alt="이미지"></div>
+            <p>6번</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

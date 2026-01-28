@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: "맑은 고딕", sans-serif;
+            margin-top: 50px;
+        }
+
+        .shadow1 {
+            color: rgb(89, 72, 47);
+            text-shadow: 20px 20px 20px gray;
+            /* 가로, 세로, 번짐정도, 색상 */
+        }
+
+        .shadow2 {
+            color: royalblue;
+            text-shadow: 3px 3px;
+        }
+
+        .shadow3 {
+            color: gray;
+            text-shadow: 20px 20px 20px gray;
+        }
+
+        .shadow4 {
+            color: aqua;
+            text-shadow: 0 0 4px lightgray, 2px -10px 6px yellow, 2px -19px 18px red, 2px -19px 6px yellow;
+        }
+
+        .shadow5 {
+            text-shadow: 20px 20px 20px gray;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 50px;
+            font-family: "맑은 고딕", sans-serif;
+        }
+
+        .wodrArtEffect {
+            color: white;
+            text-shadow: 0px 0px 3px rgb(0, 0, 86);
+            font-size: 40px;
+        }
+
+        .threeDEffect {
+            color: rgb(178, 178, 178);
+            text-shadow: 1px 1px 0px black,
+                2px 2px 0px black,
+                3px 3px 0px black,
+                4px 4px 0px black,
+                5px 5px 0px black,
+                6px 6px 0px black,
+                7px 7px 0px black;
+            font-size: 40px;
+        }
+
+        .multiEffect {
+            color: lightgray;
+            text-shadow: 2px 2px 2px gray,
+                4px 4px 4px gray,
+                6px 6px 6px gray,
+                8px 8px 8px gray;
+            font-size: 40px;
+        }
+
+        .redBox {
+            width: 150px;
+            height: 70px;
+            padding: 10px;
+            border: 10px solid lightgray;
+            background-image: url(../images/exampleImage.jpg);
+            /* 배경이미지 사이즈 조절 */
+            background-size: cover;
+            /* 배경이미지 반복 금지 */
+            background-repeat: no-repeat;
+            box-shadow: 10px 10px 5px gray;
+            /* 가로, 세로, 번짐정도, 색상 */
+            margin: auto;
+        }
+
+        .blueBox {
+            width: 150px;
+            height: 70px;
+            border: 10px solid lightgray;
+            padding: 10px;
+            box-shadow: 10px 10px 5px skyblue;
+            background-image: url(../images/exampleImage.jpg);
+            /* 배경이미지 사이즈 조절 */
+            background-size: cover;
+            /* 배경이미지 반복 금지 */
+            background-repeat: no-repeat;
+            /* 가로, 세로, 번짐정도, 색상 */
+            margin: auto;
+        }
+
+        p {
+            font-family: "맑은 고딕", sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="shadow1">HTML5</h1>
+    <h1 class="shadow2">HTML5</h1>
+    <h1 class="shadow3">HTML5</h1>
+    <h1 class="shadow4">HTML5</h1>
+    <h1 class="shadow5">HTML5</h1>
+    <div class="center">
+        <div class="wodrArtEffect">WodrArtEffect</div>
+        <div class="threeDEffect">3D Effect</div>
+        <div class="multiEffect">Multiple Shadw Effect</div>
+    </div>
+
+    <hr>
+    <div class="center">
+        <h3>박스 그림자 만들기</h3>
+        <div class="redBox">글자 예시</div> <br><br>
+        <div class="blueBox">글자 예시</div>
+        <div class="multiEffect">글자 예시</div>
+    </div>
+
+    <div class="center">
+        <hr>
+        <h3>마우스 커서</h3>
+        <p style="cursor: crosshair;">십자 모양 커서 </p>
+        <p style="cursor: pointer;">포인터 모양 커서</p>
+        <p style="cursor: help;">도움말 모양 커서</p>
+        <p style="cursor: progress;">프로그램 진행 모양 커서</p>
+        <p style="cursor: n-resize;">상하 방향 커서</p>
+    </div>
+</body>
+
+</html>

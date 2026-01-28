@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            /*와일트 카드 문자 * : 전체선택*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        h3 {
+            text-align: center;
+            line-height: 700px;
+            color: rgb(0, 0, 0);
+            font-size: 70px;
+            font-weight: 800;
+            /*글자의 두께 설정 */
+        }
+
+        .section01 {
+            height: 700px;
+            background: url(../images/exampleImage.jpg) no-repeat 50% 0 fixed;
+            /* fixed -> background-attachment: fixed; */
+            background-size: cover;
+            
+        }
+
+        .section02 {
+            height: 700px;
+            background: url(../images/exampleImage02.jpg) no-repeat 50% 0 scroll;
+            background-size: cover;
+        }
+
+        .section03 {
+            height: 700px;
+            background: url(../images/exampleImage03.png) no-repeat 50% 0 fixed;
+            background-size: cover;
+        }
+
+        .section04 {
+            height: 700px;
+            background: url(../images/exampleImage04.jpg) no-repeat 50% 0 scroll;
+            background-size: cover;
+        }
+
+        nav {
+            height: 70px;
+
+        }
+        ul{
+            list-style: none;
+            text-align: center;
+        }
+        li,.top{
+            display: inline;
+            border: solid 2px black;
+            margin: 0px 10px;
+        }
+        li:hover{
+            background-color: black;
+        }
+        a{
+            color: black;
+            text-decoration: none; /* a태그 기본 꾸미기 속성 없애줌 */
+        }
+        a:hover{
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+        <section class="section01">
+            <nav>
+                <ul>
+                    <li><a href="#section02">버튼1</a></li>
+                    <li><a href="#section03">버튼2</a></li>
+                    <li><a href="#section04">버튼3</a></li>
+                </ul>
+            </nav>
+            <h3>WEB FRONTEND</h3>
+        </section>
+        <section class="section02" id="section02">
+            <h3>WEB FRONTEND</h3>
+            <a href="#" class="top">맨 위로</a>
+        </section>
+        <section class="section03" id="section03">
+            <h3>WEB FRONTEND</h3>
+            <a href="#" class="top">맨 위로</a>
+        </section>
+        <section class="section04" id="section04">
+            <h3>WEB FRONTEND</h3>
+            <a href="#" class="top">맨 위로</a>
+        </section>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* -----------------------------------헤더 스타일----------------------------------- */
+header {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo{
+    width: 80px;
+    margin-top: 5px;
+}
+
+.header-inner {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 15px;
+}
+
+.nav-bar a:hover {
+    color: #7e7e7e;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-utils {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar input {
+    background: #f5f5f5;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+/* -----------------------------------히어로 섹션----------------------------------- */
+.hero-section {
+    width: 100%;
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000') no-repeat center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.btn-buy {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* -----------------------------------트랜딩 나우 섹션----------------------------------- */
+.trending-now-title{
+    margin-top: 100px;
+    text-decoration: none;
+    margin-left: 84px ;
+    margin-right: 24px;
+    font-size: 20px;
+    font-weight: 600; 
+}
+
+.trending-now-text{
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+.buy-btn{ 
+    display: inline-block; /* 너비/높이 적용을 위해 */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+
+    width: 80px;
+    text-align: center; /* 텍스트 가로 중앙 정렬 */
+    padding: 8px 0;     /* 위아래 여백으로 높이감 주기 */
+   
+    background-color: white;
+    border-radius: 30px; /* 둥근 모서리 축약형 */
+    cursor: pointer;
+    user-select: none; /* 텍스트 드래그 방지 */
+    
+}
+.buy-btn:hover{
+    background-color: #cccccc;
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 1:1:1 비율로 3개 나열 */
+    gap: 20px;          /* 사진 사이 간격 */
+    margin: 20px 48px;  /* 제목과 라인 맞추기 */
+}
+
+.tranding-item {
+    position: relative; /* 자식 요소 배치의 기준점 */
+    height: 400px;      /* 높이 지정 */
+}
+
+.trending-grid img{
+    width: 100%;        /* 그리드 칸에 꽉 차게 */
+    height: 100%;       /* 부모 높이(400px)에 꽉 차게 */
+    object-fit: cover;  /* 비율 유지하며 빈틈없이 채우기 (중요!) */
+    cursor: pointer;
+    border-radius: 12px; /* 둥근 모서리 추가 */
+}
+
+/* 2. 기준점 안에서 위치 잡기 (수동 계산 X) */
+.tranding-info{
+    position: absolute;
+    bottom: 30px;       /* 부모 박스 바닥에서 30px 위 */
+    left: 30px;         /* 부모 박스 왼쪽에서 30px 옆 */
+    z-index: 10;        /* 이미지보다 위에 뜨도록 */
+}
+
+
+
+
+/* -----------------------------------스포트라이트 섹션----------------------------------- */
+.spotlight {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.spotlight h2 { font-size: 40px; font-weight: 900; margin-bottom: 20px; }
+.spotlight-sub { margin-bottom: 50px; color: #666; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+}
+
+.product-item img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-item span { font-size: 12px; font-weight: bold; }
+
+/* -----------------------------------푸터 스타일----------------------------------- */
+footer {
+    background: #fff;
+    padding: 60px 40px 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px;
+    margin-bottom: 60px;
+}
+
+.footer-column h4 { font-size: 14px; margin-bottom: 25px; }
+.footer-column ul { list-style: none; }
+.footer-column li { font-size: 12px; color: #7e7e7e; margin-bottom: 12px; cursor: pointer; }
+.footer-column li:hover { color: #111; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #7e7e7e;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}

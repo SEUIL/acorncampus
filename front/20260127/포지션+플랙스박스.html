@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            border: 5px solid rgb(0, 4, 255);
+            width: auto;
+            height: 500px;
+        }
+
+        /* -----------------1번--------------------- */
+        .div01-1,
+        .div02-1,
+        .div03-1 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: purple;
+            color: white;
+        }
+
+        .section01 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* -----------------2번--------------------- */
+        .form02 {
+            display: flex;
+            justify-content: space-between;
+            /* 왼쪽(section02)과 오른쪽(section02-2) 끝으로 배치 */
+            align-items: flex-start;
+            /* 상단 정렬 */
+        }
+
+        .div01-2,
+        .div02-2,
+        .div03-2 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 2px;
+
+            background-color: purple;
+            color: white;
+        }
+
+        .section02 {
+            display: flex;
+        }
+
+        .section02-2 {
+            display: flex;
+        }
+
+
+        /* -----------------3번--------------------- */
+        .div01-3 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: purple;
+            color: white;
+        }
+
+        .div02-3 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: rgb(0, 0, 0);
+            color: white;
+
+            position: absolute;
+            left: 60px;
+            top: 1070px;
+        }
+
+        /* -----------------4번--------------------- */
+        .div01-4 {
+            width: 400px;
+            height: 200px;
+
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: black;
+            color: white;
+            position: relative;
+            /* 자식 요소 배치의 기준점 */
+        }
+
+        .div02-4 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: purple;
+            color: white;
+
+            position: absolute;
+            /* 절대 위치 지정 */
+            top: 0;
+            left: 0;
+        }
+
+        .div03-4 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: purple;
+            color: white;
+
+            position: absolute;
+            /* 절대 위치 지정 */
+            bottom: 0;
+            right: 0;
+        }
+
+        .form04 {
+            display: flex;
+            justify-content: flex-end;
+            /* 가로 방향 오른쪽 끝 정렬 */
+            align-items: flex-end;
+            /* 세로 방향 아래 끝 정렬 */
+        }
+
+        /* -----------------5번--------------------- */
+        .div01-5 {
+            width: 200px;
+            height: 200px;
+
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: black;
+            color: white;
+
+            position: relative;
+        }
+
+        .div02-5 {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+
+            background-color: purple;
+            color: white;
+
+            position:absolute;
+            left: 25%;
+            
+        }
+
+        .form05{
+            display: flex;
+            justify-content: center;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <form class="form01">
+        <section class="section01">
+            <div class="div01-1">div01</div>
+            <div class="div02-1">div02</div>
+            <div class="div03-1">div03</div>
+        </section>
+    </form>
+
+    <form class="form02">
+        <section class="section02">
+            <div class="div01-2">div01</div>
+
+        </section>
+        <section class="section02-2">
+            <div class="div02-2">div02</div>
+            <div class="div03-2">div03</div>
+        </section>
+    </form>
+
+    <form class="form03">
+        <section class="section03">
+            <div class="div01-3">div01</div>
+            <div class="div02-3">div02</div>
+        </section>
+    </form>
+
+    <form class="form04">
+        <section class="section04">
+            <div class="div01-4">div01
+                <div class="div02-4">div02</div>
+                <div class="div03-4">div03</div>
+            </div>
+        </section>
+    </form>
+
+    <form class="form05">
+        <section class="section05">
+            <div class="div01-5">div01
+                <div class="div02-5">div02</div>
+            </div>
+        </section>
+    </form>
+
+</body>
+
+</html>

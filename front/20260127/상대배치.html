@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            display: inline-block;
+            /* 가로로 나열 */
+            width: 50px;
+            height: 50px;
+            border: 2px solid #333;
+            margin: 5px;
+
+            text-align: center;
+            /* 가로 중앙 정렬 */
+            line-height: 50px;
+            /*세로 중앙 정렬 (height와 동일하게)*/
+            font-size: 24px;
+            font-weight: bold;
+
+            position: relative;
+            /* 위치 이동의 기준 */
+            top: 0;
+            /* 처음 위치 */
+
+            cursor: pointer;
+            background-color: rgb(218, 62, 62);
+            color: white;
+        }
+
+        .T:hover {
+            background-color: lightgreen;
+            top: -20px;
+            right: 20px;
+            
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .h:hover {
+            background-color: lightgreen;
+            top: -20px;
+            right: -20px;
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .a:hover {
+            background-color: lightgreen;
+            top: 20px;
+            right: 20px;
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .n:hover {
+            background-color: lightgreen;
+            top: 20px;
+            right: -20px;
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .k:hover{
+            background-color: lightgreen;
+            top: 20px;
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .s:hover {
+            background-color: lightgreen;
+            top: -20px;
+            right: 20px;
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>상대 배치, relative</h2>
+    <h3>h와 k글자에 마우스를 올려보세요</h3>
+    <hr>
+
+    <div class="T">T</div>
+    <div class="h">h</div>
+    <div class="a">a</div>
+    <div class="n">n</div>
+    <div class="k">k</div>
+    <div class="s">s</div>
+</body>
+
+</html>

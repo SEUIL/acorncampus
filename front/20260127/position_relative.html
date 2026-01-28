@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_relative</title>
+    <style>
+        .static{
+            background-color: antiquewhite;
+            width: 300px;   
+            height: 200px;
+            position: static; /*기본값 : 요소를 문서의 흐름에 맞추어 배치*/
+        }
+        .relative_1{
+            background-color: blue;
+            width: 300px;
+            height: 200px;
+            position: relative;
+        }
+        .relative_2{
+            background-color: plum;
+            width: 300px;
+            height: 200px;
+            position: relative;
+            top: -50px;
+            left: 100px;;
+        }
+        .fixed{
+            background-color: aqua;
+            width: 500px;
+            height: 50px;
+            position: fixed;
+            top: 0px;
+            right: 50px;
+            border: solid 3px;
+        }
+        .sticky{
+            width: 80px;
+            height: 80px;
+            background-color: chocolate;
+            position: sticky;
+            top: 5px; /*top이 있어야 된다 top이 5픽셀일 때 고정;*/
+        }
+        pre{
+            font-size: 20px;
+        }
+        .float{
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="static">박스1</div>
+    <div class="relative_1">박스2</div>
+    <div class="relative_2">박스3</div>
+    <div class="fixed">박스4 <br> 공지사항, 상단 메뉴바 스크롤 생겼을때 확인</div>
+    <div class="sticky">박스5 <br> top가 5px일 때 고정 </div>
+
+    <pre>
+        골든블루 인터내셔널은 위스키 '카발란'의 면세점 전용 에디션인 '카발란 미니어처 위스키 기프트 세트'를 
+        한정 출시한다고 27일 밝혔다. 카발란 엑스버번 오크, 카발란 와인 오크, 카발란 브랜디 오크, 카발란 포트 
+        오크 등 싱글몰트 위스키 4가지를 50㎖ 미니어처 형태로 구성했다. (부산=연합뉴스)
+    </pre>
+
+    <h3>학기말 공지</h3>
+    <hr>
+    <div class="">
+        <p class="float">30일 개인 포트폴리오 발표가 있습니다.</p>
+        <p>영하 10도의 날씨에도 이렇게 학원을 찾아주신 여러분 감사합니다.</p>
+    </div>
+</body>
+</html>

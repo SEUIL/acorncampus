@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border 테두리 관련 속성</title>
+    <style>
+        div{
+            font-family: "맑은 고딕", sans-serif;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+        .box01{
+            /* dashed, dotted, double이중선, groove, inset, outset */
+            border: 5px dashed red; /* 실선 테두리 */
+            /* 테두리 굵기(두께) , 테두리 스타일 , 테두리 색상*/
+            margin-bottom: 10px;
+        }
+        .box02{
+            border-width: thick thin;
+            border-style: double;
+            border-color:blue;
+            margin-bottom: 10px;
+        }
+        .box03{
+            border-width: 10px 5px 2px 15px; /* 시계방향(top, right, bottom, left) */
+            border-style: dotted;
+            border-color:green;
+            margin-bottom: 10px;
+        }
+        .box04{
+            border-style: outset;
+            border-width: 10px 6px 7px 4px;
+            border-right-color:pink;
+            border-bottom-color:purple;
+            border-left-color: aqua;
+            margin-bottom: 10px;
+        }
+        /* round */
+        .round1{
+            border: 5px solid black;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 50px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .round2{
+            border: 5px solid lightgreen;
+            border-radius: 50%;
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .round3{
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box01">박스 1번</div>
+    <div class="box02">박스 2번</div>
+    <div class="box03">박스 3번</div>
+    <div class="box04">박스 4번</div>
+
+
+    <!-- round -->
+    <div class="round1">첫번째</div>
+    <div class="round2">두번째</div>
+    <div class="round3">세번째</div>
+</body>
+</html>

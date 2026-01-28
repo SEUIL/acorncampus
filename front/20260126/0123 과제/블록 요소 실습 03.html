@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+            font-family: "맑은 고딕", sans-serif;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .container{
+            width: 450px;
+            margin: 0px auto;
+            font-family: "맑은 고딕", sans-serif;
+        }
+        .form-group{
+            display: inline-block;
+            width: 100px;
+            margin: 20px auto;
+            margin-bottom: 5px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="title">회원가입</h1>
+    <div class="container">
+        
+
+        <div class="form-group">
+
+            <label for="user_birth">생년월일</label> <br>
+            <input type="text" id="user_year" placeholder="년도(4자)">
+
+            <label for="user_month"></label>
+            <select id="user_month" >
+                <option value="월" hidden>월</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+            <input type="text" id="user_day" placeholder="일">
+
+            <br><br>
+
+            <label for="sex">성별</label>
+            <input type="radio" id="male" name="sex">
+            <label for="male">남자</label>
+            <input type="radio" id="female" name="sex">
+            <label for="female">여자</label>
+
+            <br><br>
+
+            <label for="user_email">이메일(선택)</label>
+            <input type="email" id="user_email" placeholder="example@example.com">
+
+            <br><br>
+
+            <label for="phone_number">휴대전화</label><br>
+            <select name="country-code" id="country-code">
+                <option value="+82">대한민국+82</option>
+                <option value="+1">미국+1</option>
+                <option value="+44">영국+44</option>
+                <option value="+86">중국+86</option>
+            </select><br>
+            <input type="tel" id="phone_number" placeholder="-없이 숫자만 입력">
+            <input type="submit" value="인증번호 받기"><br>
+            <input type="text" placeholder="인증번호를 입력하세요">
+
+            <br><br>
+
+            <input type="submit" value="가입하기">
+
+        </div> 
+
+    </div>
+
+    <div class="footer">
+        이용약관 | 개인정보처리방침 | 고객센터<br>
+        © 2026 Sample Corp.
+    </div>
+
+</body>
+</html>

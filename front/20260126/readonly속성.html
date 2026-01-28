@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배송 정보</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>배송 정보</legend>
+
+            <ul>
+                <li>
+                    <label for="prod">주문 상품</label>
+                    <input type="text" id="prod" value="상품용 3kg" readonly>
+                    <!-- readonly 속성은 사용자가 입력할 수 없도록 설정 -->
+                </li>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" autofocus required>
+                    <!-- autofocus 속성은 페이지 로드 시 자동으로 포커스를 맞춤
+                    required 속성은 필수 입력 필드로 설정 --> 
+                </li>
+                <li>
+                    <label for="addr">배송 주소</label>
+                    <input type="text" id="addr" required>
+                </li>
+                <li>
+                    <label for="phone">휴대폰 번호</label>
+                    <input type="tel" id="phone" placeholder="000-0000-0000" required>
+                </li>
+                <li>
+                    <label for="d-day">배송일 지정</label>
+                    <input type="date" id="d-day"><small>(주문일로부터 최소 3일 이후)</small>
+                </li>
+            </ul>
+        </fieldset>
+        <div>
+            <input type="submit" value="주문하기">
+            <input type="reset" value="취소하기">
+        </div>
+    </form>
+
+
+</body>
+</html>

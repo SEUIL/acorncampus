@@ -1,0 +1,53 @@
+fieldset{
+    width: 400px;
+}
+
+body{
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+    border: 1px solid lightblue;
+
+}
+
+form{
+    border: 1px solid lightblue;
+    width: 450px;
+    padding: 25px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+legend{
+    color: 1e88e5;
+    font-weight: bold;
+}
+
+label{
+    display: inline-block;
+    width: 90px;   
+}
+
+input, select, textarea{
+    border: 1px solid rgb(222, 204, 204);
+    font-size: 14px;
+    padding : 6px;
+    margin-bottom: 19px
+}
+
+input[type="radio"],
+    input[type="checkbox"]{
+        margin-right: 4px;
+    }
+
+input[type="submit"]{
+    background: #1e88e5;
+    color: #fff;
+    padding: 8px 18px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
