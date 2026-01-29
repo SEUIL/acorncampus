@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li{
+            line-height: 30px;
+            margin-bottom: 2px;
+        }
+        ul li:nth-child(even){ /* 짝수만 선택 */
+            color: blue;
+        }
+        ul li:nth-child(odd){ /* 짝수만 선택 */
+            color: red
+        }
+        ul li:nth-child(1){ /* 내용을 덮어쓴다 cascading:폭포같은 */
+            color: red
+        }
+        ul li:nth-child(3n+2){ /* 2번째부터 3의 배수 선택 */
+            background-color:bisque;
+        }
+        ul li:nth-child(n+3){ /* 3번째 요소부터 전체선택 */
+            background-color:rgb(196, 255, 235);
+        }
+        ul li:nth-child(3n){ /* 3의 배수 */
+            background-color:rgb(230, 196, 255);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h3>파스타 면의 종류</h3>
+    <ul>
+        <li>스파게티(Spaghetti) : 가장 대중적인 롱 파스타</li>
+        <li>링귀네(Linguine) : 납작하게 눌린 모양의 면</li>
+        <li>펜네(Penne) : 끝이 사선으로 잘린 튜브 모양</li>
+        <li>라자냐(Lasagna) : 얇은 반죽을 층층이 쌓은 파스타</li>
+        <li>페투치네(Fettuccine) : 칼국수처럼 넓적한 면</li>
+        <li>라비올리(Ravioli) : 고기나 치즈를 채운 이탈리아식 만두</li>
+        <li>푸실리(Fusilli) : 꼬불꼬불한 나선형 모양</li>
+        <li>뇨키(Gnocchi) : 감자와 밀가루로 반죽한 덤플링</li>
+        <li>마카로니(Macaroni) : 작고 구부러진 튜브 형태</li>
+    </ul>
+</body>
+</html>

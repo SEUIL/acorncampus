@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: aliceblue;
+            display: flex;
+            justify-content: space-around;
+            height: 70px;
+            align-items: center;
+            padding-top: 5px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+        }
+
+        li {
+            padding: 0 15px;
+        }
+
+        a {
+            color: gray;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .appo {
+            padding: 5px;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        .appo:hover {
+            color: blue;
+            cursor: pointer;
+            color: aliceblue;
+            border-radius: 7px;
+        }
+
+        /* 768 */
+        @media screen and (max-width: 768px) {
+            nav {
+                height: 170px;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar ul li {
+                line-height: 2;
+            }
+
+            .fa-bell,
+            .appo {
+                /* visibility: hidden; */
+                display: none;
+            }
+
+        }
+
+        /*-------------------------------- 메인 컨텐츠 영역 스타일-------------------------------- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .folder-group {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            /* 3열 배치 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        .folder-group summary {
+            font-size: 1.2rem;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            outline: none;
+        }
+
+        .folder-group ul {
+            display: block;
+            /* 상단 네비게이션의 flex 속성 덮어쓰기 */
+            padding: 0;
+        }
+
+        .folder-group li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .folder-group li:last-child {
+            border-bottom: none;
+        }
+
+        .folder-group a {
+            color: #555;
+            font-weight: normal;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .folder-group a:hover {
+            color: #007bff;
+            padding-left: 5px;
+        }
+
+        /* --------------------------------반응형: 태블릿 이하-------------------------------- */
+        @media screen and (max-width: 768px) {
+            .folder-group {
+                width: 100%;
+                /* 1열 배치 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1> &amp; INDEX &nbsp;</h1>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-calendar"></i></a></li>
+                <li class="appo">Appointment</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 20260122 폴더 -->
+        <div class="folder-group">
+            <details>
+                <summary>📂 20260122</summary>
+                <ul>
+                    <li><a href="front/20260122/하이퍼링크_실습.html">하이퍼링크_실습.html</a></li>
+                    <li><a href="front/20260122/과제_자기소개페이지.html">과제_자기소개페이지.html</a></li>
+                    <li><a href="front/20260122/브라우저종류.html">브라우저종류.html</a></li>
+                    <li><a href="front/20260122/시멘틱태그.html">시멘틱태그.html</a></li>
+                    <li><a href="front/20260122/태그연습.html">태그연습.html</a></li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- 20260123 폴더 -->
+        <div class="folder-group">
+            <details>
+                <summary>📂 20260123</summary>
+                <ul>
+                    <li><a href="front/20260123/a요소 링크 색상.html">a요소 링크 색상.html</a></li>
+                    <li><a href="front/20260123/breakpoint_test.html">breakpoint_test.html</a></li>
+                    <li><a href="front/20260123/Elvis.html">Elvis.html</a></li>
+                    <li><a href="front/20260123/블록 요소 실습 02.html">블록 요소 실습 02.html</a></li></a></li>
+                    <li><a href="front/20260123/블록 요소 실습 03-2.html">블록 요소 실습 03-2.html</a></li>
+                    <li><a href="front/20260123/블록 요소 실습 03.html">블록 요소 실습 03.html</a></li>
+                    <li><a href="front/20260123/블록 요소 실습.html">블록 요소 실습.html</a></li>
+                    <li><a href="front/20260123/블록요소예제.html">블록요소예제.html</a></li>
+                    <li><a href="front/20260123/오디오비디오.html">오디오비디오.html</a></li>
+                    <li><a href="front/20260123/입력 폼 만들기 실습 css 수정 실습.html">입력 폼 만들기 실습 css 수정 실습.html</a></li>
+                    <li><a href="front/20260123/입력 폼 만들기 실습.html">입력 폼 만들기 실습.html</a></li>
+                    <li><a href="front/20260123/점심메뉴.html">점심메뉴.html</a></li>
+                    <li><a href="front/20260123/페이지안의링크.html">페이지안의링크.html</a></li>
+                    <li><a href="front/20260123/폼관련 태그.html">폼관련 태그.html</a></li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- 20260126 폴더 -->
+        <div class="folder-group">
+            <details>
+                <summary>📂 20260126</summary>
+                <ul>
+                    <li><a href="front/20260126/네이버폼.html">네이버폼.html</a></li>
+                    <li><a href="front/20260126/박스모델활용.html">박스모델활용.html</a></li>
+                    <li><a href="front/20260126/백그라운드스크롤 02.html">백그라운드스크롤 02.html</a></li>
+                    <li><a href="front/20260126/백그라운드스크롤.html">백그라운드스크롤.html</a></li>
+                    <li><a href="front/20260126/블록요소로바꾸기.html">블록요소로바꾸기.html</a></li>
+                    <li><a href="front/20260126/스크롤+호버+그리드.html">스크롤+호버+그리드.html</a></li>
+                    <li><a href="front/20260126/호버버튼 실습.html">호버버튼 실습.html</a></li>
+                    <li><a href="front/20260126/호버버튼.html">호버버튼.html</a></li>
+                    <li><a href="front/20260126/background.html">background.html</a></li>
+                    <li><a href="front/20260126/border.html">border.html</a></li>
+                    <li><a href="front/20260126/box-sizing.html">box-sizing.html</a></li>
+                    <li><a href="front/20260126/float01.html">float01.html</a></li>
+                    <li><a href="front/20260126/float02.html">float02.html</a></li>
+                    <li><a href="front/20260126/float03.html">float03.html</a></li>
+                    <li><a href="front/20260126/gradient01.html">gradient01.html</a></li>
+                    <li><a href="front/20260126/grid 실습.html">grid 실습.html</a></li>
+                    <li><a href="front/20260126/grid.html">grid.html</a></li>
+                    <li><a href="front/20260126/naver_form.css">naver_form.css</a></li>
+                    <li><a href="front/20260126/readonly속성.html">readonly속성.html</a></li>
+                    <li><a href="front/20260126/shadow.html">shadow.html</a></li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- 20260129 폴더 -->
+        <div class="folder-group">
+            <details>
+                <summary>📂 20260129</summary>
+                <ul>
+                    <li><a href="front/20260129/스타벅스 실습/스타벅스 실습.html">스타벅스 실습.html</a></li>
+                    <li><a href="front/20260129/리스트스타일.html">리스트스타일.html</a></li>
+                    <li><a href="front/20260129/opacity_hover.html">opacity_hover.html</a></li>
+                    <li><a href="front/20260129/nth-of-type.html">nth-of-type.html</a></li>
+                    <li><a href="front/20260129/nth-of-type02.html">nth-of-type02.html</a></li>
+                    <li><a href="front/20260129/애니메이션01.html">애니메이션01.html</a></li>
+                    <li><a href="front/20260129/애니메이션02.html">애니메이션02.html</a></li>
+                    <li><a href="front/20260129/애니메이션03.html">애니메이션03.html</a></li>
+                    <li><a href="front/20260129/애니메이션03-2.html">애니메이션03-2.html</a></li>
+                    <li><a href="front/20260129/미디어쿼리.html">미디어쿼리.html</a></li>
+                    <li><a href="front/20260129/미디어쿼리2.html">미디어쿼리2.html</a></li>
+                    <li><a href="front/20260129/미디어쿼리3.html">미디어쿼리3.html</a></li>
+                    <li><a href="front/20260129/미디어쿼리메뉴바.html">미디어쿼리메뉴바.html</a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>
