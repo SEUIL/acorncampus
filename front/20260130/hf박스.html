@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hf박스</title>
+    <style>
+        /* 다운로드한 폰트 넣기 */
+        @font-face{
+            font-family: 'diablo font';
+            src: url(./diablo\ font.ttf);
+        }
+
+        body{
+            background-color: rgb(244, 232, 255);
+            font-family: 'diablo font';
+        }
+        h1{
+            color: rgb(55, 55, 140);
+            font-weight: 100;
+            margin: 50px 0;
+        }
+        section{
+            background-color: white;
+            border-radius: 5px;
+            width: 300px;
+            height: 450px;
+            box-shadow: rgb(188, 188, 188) 0px 7px 29px 0px;
+            padding: 25px;
+            margin: 15px;
+            cursor: pointe;
+            transition: all 0.3s;
+        }
+        section:hover{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px;
+            /* transition: all 0.3s; */
+            transform-origin: 0 100%; /* 회전 중심 (x축, y축, z축) */
+            /* transform: translateY(-40px); */
+            transform: scaleY(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>국민과 함께 성장하는 <b>글로벌 주택금융 리더</b></h1>
+    <main>
+        <section>
+            <h2>아낌e-보금자리론</h2>
+            <h3>0.1% 더 저렴한 금리</h3>
+            <aside>
+                <span>최대</span>
+                주택가격 6억원<br>
+                디아블로 폰트
+                Diablo Font
+                <img src="../images/경고.png" alt="" width="100px">
+            </aside>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            height: 800px;
+            margin: 30px;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 3 1fr;
+            grid-template-rows: 150px auto 70px;
+            grid-template-areas:
+                "box01 box01 box02"
+                "box03 box04 box02"
+                "box03 box04 box02"
+                "box05 box04 box06"
+                "box05 box07 box07";
+        }
+        
+
+        .box01 {
+            background-image: url(/front/images/1.jpg);
+            grid-area: box01;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        }
+
+        .box02 {
+            background-image: url(/front/images/2.jpg);
+            grid-area: box02;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        }
+
+        .box03 {
+            background-image: url(/front/images/3.jpg);
+            grid-area: box03;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        }
+
+        .box04 {
+            background-image: url(/front/images/4.jpg);
+            grid-area: box04;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        } 
+
+        .box05 {
+            background-image: url(/front/images/5.jpg);
+            grid-area: box05;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        } 
+
+        .box06 {
+            background-image: url(/front/images/6.jpg);
+            grid-area: box06;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        } 
+
+        .box07 {
+            background-image: url(/front/images/apple-pie-10071302_1280.jpg);
+            grid-area: box07;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* padding: 5px; */
+            /* background-clip: content-box; */
+        } 
+
+    </style>
+</head>
+
+<body>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+    <div class="box06">box06</div>
+    <div class="box07">box07</div>
+</body>
+
+</html>
