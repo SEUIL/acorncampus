@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 목록</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 2px;
+        }
+
+        /* 주문폭주 */
+        .hot {
+            background-color: #ff99ff;
+            color: black;
+        }
+
+        /* NEW */
+        .new {
+            background-color: #ff0000;
+        }
+
+        /* 품절 */
+        .sold-out {
+            background-color: #008000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>제품 목록</h1>
+        <ul>
+            <li><span class="badge hot">주문폭주!!</span> 제품 A</li>
+            <li>제품 B</li>
+            <li>제품 C</li>
+            <li>제품 D <span class="badge new">NEW!!</span></li>
+            <li>제품 E</li>
+            <li><span class="badge hot">주문폭주!!</span> 제품 F</li>
+            <li>제품 G <span class="badge sold-out">품절!!</span></li>
+            <li>제품 H <span class="badge sold-out">품절!!</span></li>
+        </ul>
+    </div>
+</body>
+
+</html>

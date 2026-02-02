@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 70px; /* 네비게이션 바 높이만큼 상단 여백 확보 */
+}
+
+.logo{
+  position: fixed;
+  top: 12.5px;
+  left: 20px;
+  z-index: 1000;
+}
+
+nav {
+  position: fixed; /* 네비게이션 바 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900; /* 로고(1000)보다 낮게 설정 */
+  background-color: rgb(211, 234, 253);
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+  align-items: center;
+  padding-top: 5px;
+  padding-left: 150px; /* 로고와 겹치지 않도록 왼쪽 여백 확보 */
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  padding: 0 15px;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+a:hover {
+  color: blue;
+}
+
+/* -----------------햄버거 버튼----------------- */
+
+.menu-toggle-btn {
+  width: 2rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: none;
+}
+
+.menu-toggle-btn span {
+  display: block;
+  height: 3px;
+  background-color: gray;
+  margin-bottom: 5px;
+}
+
+/* -----------------768----------------- */
+@media screen and (max-width: 768px) {
+  
+  .menu-toggle-btn { /* 햄버거 버튼 */
+    display: block;
+  }
+
+  /* 모바일 메뉴 스타일 */
+  .navbar {
+    display: none; 
+    position: absolute;
+    top: 70px; /* 네비게이션 높이만큼 아래로 */
+    left: 0;
+    width: 100%;
+    background-color: rgba(237, 245, 252, 0.95);
+    z-index: 100;
+    border-top: 1px solid #ccc;
+  }
+
+  .navbar.active {
+    display: block; /* active 클래스가 있으면 보임 */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    /* padding: 20px 0; */
+    text-align: left;
+    margin-left: 30px;
+  }
+
+  .navbar ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .fa-bell,.fa-calendar,
+  .appo {
+    /* visibility: hidden; */
+    display: none;
+  }
+
+  nav {
+    padding-left: 0; /* 모바일에서는 패딩 초기화 */
+  }
+}
+/*-------------------------------- 메인 컨텐츠 영역 스타일-------------------------------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.folder-group {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(33.33% - 20px);
+  /* 3열 배치 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.folder-group summary {
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+}
+
+.folder-group ul {
+  display: block;
+  /* 상단 네비게이션의 flex 속성 덮어쓰기 */
+  padding: 0;
+}
+
+.folder-group li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.folder-group li:last-child {
+  border-bottom: none;
+}
+
+.folder-group a {
+  color: #555;
+  font-weight: normal;
+  display: block;
+  transition: 0.2s;
+}
+
+.folder-group a:hover {
+  color: #007bff;
+  padding-left: 5px;
+}
+
+/* --------------------------------반응형: 태블릿 이하-------------------------------- */
+@media screen and (max-width: 768px) {
+  .folder-group {
+    width: 100%;
+    /* 1열 배치 */
+  }
+}

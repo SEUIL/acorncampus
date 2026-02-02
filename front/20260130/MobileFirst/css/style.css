@@ -216,7 +216,7 @@ footer {
 /* 데스크탑 최소 1024px */
 @media (min-width: 1024px) {
   /*---------- 1024이상일 때 nav창 없애고 입력할수있는 검색창 만들기 ----------*/
-  
+
   .menu-toggle-btn {
     display: none;
   }
@@ -246,18 +246,30 @@ footer {
     display: flex;
   }
 
-  .nav li{
+  .nav li {
     margin-right: 1rem;
   }
 
-  .nav a{
+  .nav a {
     color: #fff;
     font-size: 0.95rem;
   }
 
-  /* 프로모션,블로그,워크 1024 넘어가면 원래대로 한줄로 나오게끔 수정 */
-  .promo-list li, .blog-list li, .work-list li {
-    width: 100%;
+  nav.is-open {
+    display: block;
   }
 
+  /* 프로모션,블로그,워크 1024 넘어가면 원래대로 한줄로 나오게끔 수정 */
+  .promo-list li,
+  .blog-list li {
+    flex: 1;
+  }
+
+  .work-list li {
+    width: 22%;
+  }
+}
+
+nav.is-open {
+  display: block;
 }
