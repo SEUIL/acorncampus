@@ -1,4 +1,9 @@
 /* 전체 레이아웃: 네비게이션 바 아래 영역을 꽉 채움 */
+html {
+    /* overflow: hidden;  */
+    /* index.css에서 강제한 스크롤바를 이 페이지에서는 제거 */
+}
+
 body {
     margin: 0;
     overflow: hidden; /* 전체 스크롤 방지 */

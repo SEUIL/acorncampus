@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url(../images/apple-pie-10071302_1280.jpg) center no-repeat;
+            background-size: cover;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .add-email {
+            background-color: #fff;
+            border-radius: 4px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            /* overflow: hidden; */
+        }
+
+        .add-email input {
+            border: 0;
+            outline: 0;
+            margin-left: 20px;
+            flex: 1;
+            /* 
+            flex-grow: 1;   (확대) 남은 여백이 생기면 1의 비율로 가져감
+            flex-shrink: 1; (축소) 공간이 부족하면 1의 비율로 줄어듦
+            flex-basis: 0%; (기본값) 시작 크기를 0으로 설정 (내용물 크기 무시)
+            => 결론: 내용물과 상관없이 남은 공간을 균등하게 꽉 채움
+            */
+
+        }
+
+        .add-email button {
+            border: 0;
+            background-color: #db0001;
+            color: #fff;
+            font-size: 16px;
+            padding: 15px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>원두 정기구독</h1>
+            <div>
+                <button class="lang">한국어</button>
+                <button>로그</button>
+            </div>
+        </nav>
+        <div class="hedaer-content">
+            <h2>매일 특별한 커피타임</h2>
+            <h3>고객님의 취향에 맞게 스페셜 커피를 즐겨 보세요</h3>
+            <p>이메일 주소를 보내시면 구독 안내문과 새로운 소식들을 보내 드립니다.</p>
+            <form class="add-email">
+                <input type="email" placeholder="이메일 주소" required>
+                <button type="submit">궁금해요</button>
+            </form>
+        </div>
+    </header>
+
+
+
+</body>
+
+</html>

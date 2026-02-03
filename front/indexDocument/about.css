@@ -1,5 +1,4 @@
 body {
-  font-family: "Noto Sans KR", sans-se rif;
   /* line-height: 1.6; */
   /* margin: 0; */
   color: #333;
@@ -47,7 +46,7 @@ body {
   display: inline-block;
 }
 
-li {
+.about-container li {
   margin-top: 5px;
 }
 

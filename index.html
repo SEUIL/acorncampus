@@ -7,7 +7,7 @@
     <title>Index</title>
     <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./front/indexDocument/index.css">
-    
+
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         </div>
         <div class="navbar">
             <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="./front/indexDocument/page.html">Page</a></li>
                 <li><a href="https://velog.io/@seuil/posts" target="_blank">Blog</a></li>
                 <li><a href="./front/indexDocument/about.html">About</a></li>
@@ -38,8 +38,61 @@
             <span></span>
         </button>
     </nav>
-
+    <!-- ------------------------------------------------------------------------------------ -->
     <div class="container">
+        <!-- -------------------------대시보드 섹션-------------------------  -->
+        <div class="dashboard-section">
+            <!-- -------------------------학습 진행률 및 기술 스택------------------------- -->
+            <div class="dashboard-card profile-summary">
+                <h2>🚀 Learning Journey</h2>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Bootcamp Progress</span>
+                        <span id="progress-text">40%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="tech-badges">
+                    <i class="fa-brands fa-html5" title="HTML5"></i>
+                    <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+                    <i class="fa-brands fa-js" title="JavaScript"></i>
+                    <i class="fa-brands fa-java" title="Java"></i>
+                </div>
+            </div>
+
+            <!-- -------------------------최근 업데이트 (Latest Work)------------------------- -->
+            <div class="dashboard-card latest-work">
+                <h2>✨ Latest Works</h2>
+                <div class="featured-grid">
+                    <a href="front/20260202/가변 동영상.html" target="_blank" class="featured-item">
+                        <div class="featured-icon">🎥</div>
+                        <div class="featured-info">
+                            <h3>가변 동영상</h3>
+                            <p>Responsive Video Layout</p>
+                        </div>
+                    </a>
+                    <a href="front/20260202/탭버튼css.html" target="_blank" class="featured-item">
+                        <div class="featured-icon">📑</div>
+                        <div class="featured-info">
+                            <h3>탭 버튼</h3>
+                            <p>CSS Tab Interface</p>
+                        </div>
+                    </a>
+                    <a href="front/20260202/gradient/gradient6.html" target="_blank" class="featured-item">
+                        <div class="featured-icon">🎨</div>
+                        <div class="featured-info">
+                            <h3>Gradient Effect</h3>
+                            <p>Advanced Color Styling</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------------------하단 폴더 목록------------------------- -->
+
         <!-- 20260122 폴더 -->
         <div class="folder-group">
             <details>
@@ -174,7 +227,7 @@
     </div>
 
     <!-- -------------------------------자바스크립트------------------------------- -->
-    <script src="./front/indexDocument/index.js"></script> 
+    <script src="./front/indexDocument/index.js"></script>
 </body>
 
 </html>
