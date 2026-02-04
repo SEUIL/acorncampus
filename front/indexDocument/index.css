@@ -91,9 +91,14 @@ a:hover {
     top: 70px; /* 네비게이션 높이만큼 아래로 */
     left: 0;
     width: 100%;
-    background-color: rgba(237, 245, 252, 0.95);
+    background-color: #576b9b;
+    opacity: 0.95;
     z-index: 100;
     border-top: 1px solid #ccc;
+  }
+
+  a{
+    color: #EEEEEE;
   }
 
   .navbar.active {
