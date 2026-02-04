@@ -1,129 +1,212 @@
 /* 전체 레이아웃: 네비게이션 바 아래 영역을 꽉 채움 */
-html {
-    /* overflow: hidden;  */
-    /* index.css에서 강제한 스크롤바를 이 페이지에서는 제거 */
-}
-
 body {
-    margin: 0;
-    overflow: hidden; /* 전체 스크롤 방지 */
+  margin: 0;
+  overflow: hidden; /* 전체 스크롤 방지 */
 }
 
 .ide-container {
-    display: flex;
-    height: calc(100vh - 75px); /* 네비게이션 높이만큼 뺌 */
-    border-top: 1px solid #e0e0e0;
+  display: flex;
+  height: calc(100vh - 75px); /* 네비게이션 높이만큼 뺌 */
+  border-top: 1px solid #e0e0e0;
 }
 
 /* 왼쪽 사이드바 (탐색기) */
 .sidebar {
-    width: 260px;
-    min-width: 130px; /* 최소 너비: 폴더명 뭉개짐 방지 */
-    background-color: #f3f3f3;
-    overflow-y: auto; /* 내용 많으면 스크롤 */
-    overflow-x: hidden; /* 가로 스크롤 방지 */
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
-    flex-shrink: 0; /* 창 크기 줄여도 사이드바가 찌그러지지 않음 */
-    padding-bottom: 30px;
+  width: 260px;
+  min-width: 130px; /* 최소 너비: 폴더명 뭉개짐 방지 */
+  background-color: #f3f3f3;
+  overflow-y: auto; /* 내용 많으면 스크롤 */
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  flex-shrink: 0; /* 창 크기 줄여도 사이드바가 찌그러지지 않음 */
+  padding-bottom: 30px;
 }
 
 .sidebar-header {
-    padding: 10px 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #6f6f6f;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #6f6f6f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* 폴더 및 파일 트리 스타일 */
 details {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 summary {
-    cursor: pointer;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #424242;
-    list-style: none; /* 기본 화살표 제거 */
-    user-select: none;
+  cursor: pointer;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #424242;
+  list-style: none; /* 기본 화살표 제거 */
+  user-select: none;
 }
 
 summary:hover {
-    background-color: #e8e8e8;
+  background-color: #e8e8e8;
 }
 
 /* 커스텀 화살표 */
 summary::before {
-    content: '▶';
-    font-size: 0.7rem;
-    margin-right: 8px;
-    color: #777;
-    display: inline-block;
-    transition: transform 0.1s;
+  content: "▶";
+  font-size: 0.7rem;
+  margin-right: 8px;
+  color: #777;
+  display: inline-block;
+  transition: transform 0.1s;
 }
 
 details[open] summary::before {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .file-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
 
 .file-list li a {
-    display: block;
-    padding: 6px 15px 6px 38px; /* 들여쓰기로 계층 표현 */
-    text-decoration: none;
-    color: #616161;
-    font-size: 0.9rem;
-    /* transition: background 0.1s; */
+  display: block;
+  padding: 6px 15px 6px 38px; /* 들여쓰기로 계층 표현 */
+  text-decoration: none;
+  color: #616161;
+  font-size: 0.9rem;
+  /* transition: background 0.1s; */
 }
 
 .file-list li a:hover {
-    background-color: #e4e6f1;
-    color: #333;
+  background-color: #e4e6f1;
+  color: #333;
 }
 
 /* 선택된 파일 하이라이트 */
 .file-list li a.active {
-    background-color: #dbeaf9;
-    color: #005fb8;
-    border-left: 3px solid #007acc;
-    padding-left: 35px; /* border 두께만큼 보정 */
+  background-color: #dbeaf9;
+  color: #005fb8;
+  border-left: 3px solid #007acc;
+  padding-left: 35px; /* border 두께만큼 보정 */
 }
 
 /* 리사이저 (드래그 핸들) */
 .resizer {
-    width: 5px;
-    cursor: col-resize;
-    background-color: #f3f3f3;
-    border-right: 1px solid #e0e0e0; /* 경계선 역할 */
-    transition: background-color 0.2s;
-    z-index: 10;
+  width: 5px;
+  cursor: col-resize;
+  background-color: #f3f3f3;
+  border-right: 1px solid #e0e0e0; /* 경계선 역할 */
+  transition: background-color 0.2s;
+  z-index: 10;
 }
 
-.resizer:hover, .resizer.resizing {
-    background-color: #007acc; /* 드래그 중이거나 호버 시 파란색 */
+.resizer:hover,
+.resizer.resizing {
+  background-color: #007acc; /* 드래그 중이거나 호버 시 파란색 */
 }
 
 /* 오른쪽 메인 뷰어 */
 .main-view {
-    flex: 1;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --------------------------------------코드뷰어---------------------------------------------- */
+/* 탭 버튼 스타일 */
+.tab-container {
+  display: flex;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+.tab-btn:hover {
+  background: #e2e2e2;
+}
+.tab-btn.active {
+  color: #007bff;
+  border-bottom: 3px solid #007bff;
+  background: #fff;
+}
+/* 테마 선택 셀렉트 박스 */
+.theme-select {
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* 뷰 영역 스타일 */
+.view-content {
+  display: none;
+  height: calc(100% - 41px);
+  overflow: hidden;
+}
+.view-content.active {
+  display: block;
+}
+
+/* 코드 뷰어 스타일 */
+#code-view {
+  padding: 20px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+.code-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.code-section h3 {
+  margin: 0 0 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 16px;
+}
+
+/* 다크 테마 스타일 (JS에서 클래스 추가 시 적용) */
+#code-view.dark-theme {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+#code-view.dark-theme .code-section {
+  background: #252526;
+  border-color: #3e3e42;
+}
+#code-view.dark-theme .code-section h3 {
+  color: #d4d4d4;
+  border-bottom: 1px solid #3e3e42;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+code {
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+  color: #333;
 }

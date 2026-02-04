@@ -8,6 +8,19 @@
     <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./page.css">
+    <!-- Highlight.js 라이브러리 추가 (VS Code 스타일 테마) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+
+    <link id="highlight-theme" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- 초기화 스크립트 (자동 적용) -->
+    <script>hljs.highlightAll();</script>
+
+
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -39,7 +52,7 @@
         </button>
     </nav>
 
-    <!-- VS Code 스타일 레이아웃 컨테이너 -->
+    <!-- ---------------------------------------VS Code 스타일 레이아웃 컨테이너 -------------------------------------- -->
     <div class="ide-container">
         <!-- 왼쪽 사이드바: 탐색기 -->
         <aside class="sidebar" id="sidebar">
@@ -70,7 +83,8 @@
                     <li><a href="../20260123/블록요소예제.html" target="previewFrame">블록요소예제.html</a></li>
                     <li><a href="../20260123/오디오비디오.html" target="previewFrame">오디오비디오.html</a></li>
                     <li><a href="../20260123/입력 폼 만들기 실습.html" target="previewFrame">입력 폼 만들기 실습.html</a></li>
-                    <li><a href="../20260123/입력 폼 만들기 실습 css 수정 실습.html" target="previewFrame">입력 폼 만들기 실습 css 수정실습.html</a></li>
+                    <li><a href="../20260123/입력 폼 만들기 실습 css 수정 실습.html" target="previewFrame">입력 폼 만들기 실습 css
+                            수정실습.html</a></li>
                     <li><a href="../20260123/점심메뉴.html" target="previewFrame">점심메뉴.html</a></li>
                     <li><a href="../20260123/페이지안의링크.html" target="previewFrame">페이지안의링크.html</a></li>
                     <li><a href="../20260123/폼관련 태그.html" target="previewFrame">폼관련 태그.html</a></li>
@@ -132,13 +146,16 @@
                     <li><a href="../20260130/grid3.html" target="previewFrame">grid3.html</a></li>
                     <li><a href="../20260130/grid4.html" target="previewFrame">grid4.html</a></li>
                     <li><a href="../20260130/hf박스.html" target="previewFrame">hf박스.html</a></li>
-                    <li><a href="../20260130/MobileFirst/index.html" target="previewFrame">MobileFirst/index.html</a></li>
-                    <li><a href="../20260130/스타벅스 ver.professor/index.html" target="previewFrame">스타벅스 ver.professor/index.html</a></li>
-                    <li><a href="../20260130/스타벅스 ver.me/index.html" target="previewFrame">스타벅스 ver.me/index.html</a></li>
+                    <li><a href="../20260130/MobileFirst/index.html" target="previewFrame">MobileFirst/index.html</a>
+                    </li>
+                    <li><a href="../20260130/스타벅스 ver.professor/index.html" target="previewFrame">스타벅스
+                            ver.professor/index.html</a></li>
+                    <li><a href="../20260130/스타벅스 ver.me/index.html" target="previewFrame">스타벅스 ver.me/index.html</a>
+                    </li>
                     <li><a href="../20260130/실습/quest-grid.html" target="previewFrame">quest-grid.html</a></li>
                 </ul>
             </details>
-            
+
             <!-- 20260202 폴더 -->
             <details>
                 <summary>📂 20260202</summary>
@@ -154,20 +171,60 @@
                     <li><a href="../20260202/가변 동영상.html" target="previewFrame">가변 동영상.html </a></li>
                     <li><a href="../20260202/탭버튼css.html" target="previewFrame">탭버튼css.html </a></li>
                     <li><a href="../20260202/가변 동영상.html" target="previewFrame">가변 동영상.html </a></li>
-                   
                 </ul>
             </details>
 
+            <!-- 20260203 폴더 -->
+            <details>
+                <summary>📂 20260203</summary>
+                <ul class="file-list">
+                    <li><a href="../20260203/calc.html" target="previewFrame">calc.html</a></li>
+                    <li><a href="../20260203/faq.html" target="previewFrame">faq.html</a></li>
+                    <li><a href="../20260203/flex1.html" target="previewFrame">flex1.html</a></li>
+            </details>
+
+
+
+
 
         </aside>
+
+        <!-- ------------------------------------코드뷰어------------------------------------------- -->
 
         <!-- 크기 조절 핸들 (Resizer) -->
         <div class="resizer" id="resizer"></div>
 
         <!-- 오른쪽 메인: 코드 미리보기 영역 -->
         <main class="main-view">
-            <!-- target="previewFrame"인 링크를 클릭하면 이 iframe에서 열립니다 -->
-            <iframe name="previewFrame" src="../20260122/하이퍼링크_실습.html"></iframe>
+            <!-- 탭 버튼 -->
+            <div class="tab-container">
+                <button class="tab-btn active" data-target="preview">결과 보기</button>
+                <button class="tab-btn" data-target="code">코드 보기</button>
+                <!-- 테마 선택 드롭다운 -->
+                <select id="theme-select" class="theme-select" style="margin-left: auto; margin-right: 10px; margin-top: 5px; height: 30px;">
+                    <option value="default">Light (Default)</option>
+                    <option value="github">Light (GitHub)</option>
+                    <option value="vs2015">Dark (VS 2015)</option>
+                    <option value="atom-one-dark">Dark (Atom One)</option>
+                    <option value="monokai">Dark (Monokai)</option>
+                </select>
+            </div>
+
+            <!-- 결과 보기 (Iframe) -->
+            <div id="preview-view" class="view-content active">
+                <iframe name="previewFrame" src="../20260122/하이퍼링크_실습.html"
+                    style="width:100%; height:100%; border:none;"></iframe>
+            </div>
+
+            <!-- 코드 보기 (Source Code) -->
+            <div id="code-view" class="view-content">
+                <div class="code-section">
+                    <h3>HTML</h3>
+                    <pre><code id="html-code">파일을 선택해주세요.</code></pre>
+                </div>
+                <!-- CSS/JS는 내용이 있을 때만 자바스크립트로 표시 -->
+                <div id="extra-code-area"></div>
+            </div>
         </main>
     </div>
 

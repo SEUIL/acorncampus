@@ -78,8 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // 해당 폴더의 파일들을 역순으로 순회 (아래쪽 파일이 최신이라고 가정)
       for (let j = links.length - 1; j >= 0; j--) {
         const link = links[j];
+
+        // href 속성에서 파일명 추출 (URL 디코딩 포함)
+        const fileName = decodeURIComponent(link.getAttribute("href").split("/").pop());
+
         latestLinks.push({
-          title: link.innerText,
+          title: fileName,
           url: link.href,
           date: dateText,
         });
