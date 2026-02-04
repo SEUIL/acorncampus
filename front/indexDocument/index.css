@@ -13,8 +13,8 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.logo{
-  color: #EEEEEE;
+.logo {
+  color: #eeeeee;
   position: fixed;
   top: 12.5px;
   left: 20px;
@@ -27,7 +27,7 @@ nav {
   left: 0;
   width: 100%;
   z-index: 900; /* 로고(1000)보다 낮게 설정 */
-  background-color:  #11224E; /* rgb(211, 234, 253); */
+  background-color: #11224e; /* rgb(211, 234, 253); */
   display: flex;
   justify-content: flex-end;
   height: 70px;
@@ -48,7 +48,7 @@ li {
 }
 
 a {
-  color: #EEEEEE;
+  color: #eeeeee;
   text-decoration: none;
   font-weight: 800;
 }
@@ -73,20 +73,20 @@ a:hover {
 .menu-toggle-btn span {
   display: block;
   height: 3px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   margin-bottom: 5px;
 }
 
 /* -----------------768----------------- */
 @media screen and (max-width: 768px) {
-  
-  .menu-toggle-btn { /* 햄버거 버튼 */
+  .menu-toggle-btn {
+    /* 햄버거 버튼 */
     display: block;
   }
 
   /* 모바일 메뉴 스타일 */
   .navbar {
-    display: none; 
+    display: none;
     position: absolute;
     top: 70px; /* 네비게이션 높이만큼 아래로 */
     left: 0;
@@ -97,8 +97,8 @@ a:hover {
     border-top: 1px solid #ccc;
   }
 
-  a{
-    color: #EEEEEE;
+  a {
+    color: #eeeeee;
   }
 
   .navbar.active {
@@ -117,7 +117,8 @@ a:hover {
     border-bottom: 1px solid #e0e0e0;
   }
 
-  .fa-bell,.fa-calendar,
+  .fa-bell,
+  .fa-calendar,
   .appo {
     /* visibility: hidden; */
     display: none;
@@ -127,10 +128,60 @@ a:hover {
     padding-right: 0; /* 모바일에서는 패딩 초기화 */
   }
 }
+
+/* -----------------히어로 섹션 (배경 + 인사말)----------------- */
+.hero-section {
+  position: relative;
+  height: 400px;
+
+  background-image: url("./cegoh-skyscrapers-3184798_1920.jpg");
+
+  background-size: cover; /* 이미지가 영역을 꽉 채우도록 */
+  background-position: center; /* 이미지 중앙 정렬 */
+  background-attachment: fixed; /* 스크롤 해도 배경은 고정 */
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  padding-left: 5%;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* 배경 위에 어두운 막을 씌워 글자 가독성 높이기 */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 검은색 반투명 */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  opacity: 0; /* 초기 상태: 안 보임 */
+  animation: fadeInLeft 1.5s ease-out forwards; /* 1.5초 동안 애니메이션 실행 */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-content p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 /*-------------------------------- 메인 컨텐츠 영역 스타일-------------------------------- */
 .container {
   width: 90%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
@@ -149,7 +200,7 @@ a:hover {
 
 .dashboard-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 2.5px;
   padding: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid #e0e0e0;
@@ -208,7 +259,7 @@ a:hover {
 /* 기술 스택 배지 */
 .tech-badges {
   display: flex;
-  gap: 20px;
+  gap: 10%;
   font-size: 2.5rem;
   color: #555;
   justify-content: center;
@@ -220,10 +271,18 @@ a:hover {
   transition: transform 0.2s;
 }
 
-.fa-html5 { color: #e34f26; }
-.fa-css3-alt { color: #1572b6; }
-.fa-js { color: #f7df1e; }
-.fa-java { color: #007396; }
+.fa-html5 {
+  color: #e34f26;
+}
+.fa-css3-alt {
+  color: #1572b6;
+}
+.fa-js {
+  color: #f7df1e;
+}
+.fa-java {
+  color: #007396;
+}
 
 /* 최근 작업물 (Featured) */
 .featured-grid {
@@ -239,7 +298,9 @@ a:hover {
   background-color: #f8f9fa;
   border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.2s, background-color 0.2s;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
 }
 
 .featured-item:hover {
@@ -270,9 +331,9 @@ a:hover {
 .folder-group {
   background-color: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 20px;
-  width: calc(33.33% - 20px);
+  width: calc((100% - 40px) / 3);
   /* 3열 배치 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
@@ -324,5 +385,17 @@ a:hover {
   }
   .dashboard-section {
     flex-direction: column;
+  }
+}
+
+/* -----------------애니메이션 정의 (왼쪽 -> 오른쪽 페이드 인)----------------- */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px); /* 왼쪽에서 시작 */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* 원래 위치로 */
   }
 }

@@ -106,7 +106,7 @@ async function loadSourceCode(url) {
 
   try {
     // 1. HTML 파일 내용 가져오기
-    const response = await fetch(url);
+    const response = await fetch(url); /* 파일을 받아오는 js 내장함수 */
     if (!response.ok) throw new Error("파일을 불러올 수 없습니다.");
     const htmlText = await response.text();
 
