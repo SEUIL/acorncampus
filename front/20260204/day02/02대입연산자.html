@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //비교연산자 -> 참(true), 거짓(false)
+        let a = 10;
+        let b = 20;
+
+        console.log(a > b);  // false
+        console.log(a < b);  // true
+        console.log(a >= 10); // true
+        console.log(b <= 20); // true
+        console.log(a == "10"); // true (값만 비교)
+        console.log(a === "10"); // false (값과 데이터 타입까지 비교)
+        console.log(a != b);   // true
+
+        //엄격한 비교, == , === 차이
+        let a02 = 10;
+        let b02 = "10";
+        console.log(a02 == b02);  // true (값만 비교하므로 형 변환이 일어남)
+        console.log(a02 === b02); // false (데이터 타입이 다르므로 false)
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

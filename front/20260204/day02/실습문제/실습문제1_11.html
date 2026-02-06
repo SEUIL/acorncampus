@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //사칙연산 계산기
+        while (true) {
+            let num01 = prompt("숫자를 입력하시오('그만' 을 입력하면 계산기가 종료됩니다.)")
+            if (operator == "그만" || num01 == "그만" || num02 == "그만") {
+                break;
+            }
+            let num02 = prompt("숫자를 입력하시오")
+            let operator = prompt("연산자를 입력하시오")
+
+            num01 = Number(num01)
+            num02 = Number(num02)
+
+            let sum = 0;
+
+            if (operator == "+") {
+                sum = num01 + num02
+            } else if (operator == "-") {
+                sum = num01 - num02
+            } else if (operator == "*") {
+                sum = num01 * num02
+            } else if (operator == "/") {
+                sum = num01 / num02
+            } 
+            alert(sum)
+        }
+
+
+    </script>
+</body>
+
+</html>

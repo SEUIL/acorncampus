@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //사칙연산 계산기
+        while (true) {
+            
+            let num01 
+            let num02 
+            let operator 
+
+            let numberAndOperator = prompt("숫자와 연산자를 입력하시오(예: 10,10,+ ), '그만' 입력 시 종료");
+
+            if (numberAndOperator === "그만") {
+                break;
+            }
+
+            let parts = numberAndOperator.split(",");
+            num01 = parts[0];
+            num02 = parts[1];
+            operator = parts[2];
+            
+            num01 = Number(num01)
+            num02 = Number(num02)
+
+            let sum = 0;
+
+            if (operator == "+") {
+                sum = num01 + num02
+            } else if (operator == "-") {
+                sum = num01 - num02
+            } else if (operator == "*") {
+                sum = num01 * num02
+            } else if (operator == "/") {
+                sum = num01 / num02
+            } else if(operator == "%"){
+                sum = num01 % num02
+            }
+            
+            alert(sum)
+        }
+
+
+    </script>
+</body>
+
+</html>

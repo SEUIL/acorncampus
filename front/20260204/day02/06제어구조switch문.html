@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            메뉴 선택시 다른 코드를 수행하기
+            많은 분기 코드를 작성할때 적합하다
+        */
+        let menu;
+        /* 
+            parseInt(); //함수, 문자열(숫자형태를 가진)을 실제 숫자로 바꿔줌
+        */
+        menu = parseInt(menu);
+
+        menuLoop: while (true) {
+            menu = prompt("메뉴를 선택하시오 1. 등록 2. 조회 3. 삭제 4. 종료")
+
+            switch (menu) {
+                case "1":
+                    alert("등록을 선택");
+                    break;
+                case "2":
+                    alert("조회를 선택");
+                    break;
+                case "3":
+                    alert("삭제를 선택");
+                    break;
+                case "4":
+                    alert("종료");
+                    break menuLoop;
+                default:
+                    alert("잘못된 메뉴 선택, 다시 선택 ㄱㄱ");
+                    break;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

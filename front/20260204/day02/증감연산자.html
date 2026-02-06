@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //증감연산자 , ++ , --
+
+        // 전위, 후위
+        // ++a, a++
+        // --a, a--
+
+        //공통점 : 변수의 값을 1 증가시키거나 1 감소시킨다.
+        //다른점 : 연산이 포함된 문장에서 실행 순서가 다르다.
+        
+        let a = 10;
+        let b = 10;
+
+        let result1 = ++a; // 전위형: a의 값을 1 증가시킨 후 result1에 대입 (a=11, result1=11)
+        let result2 = b++; // 후위형: b의 값을 result2에 먼저 대입한 후 b를 1 증가 (b=11, result2=10)
+
+        console.log("전위형 결과:", result1, a);
+        console.log("후위형 결과:", result2, b); 
+
+        
+
+    </script>
+
+
+</body>
+</html>

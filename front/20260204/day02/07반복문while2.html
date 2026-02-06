@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 1;
+        while (n <= 5) {
+            alert("즐거운 금요일 되세요.")
+            n++;
+        }
+        /* stop할 때까지 자기 이름 출력 */
+        /* 무한루프, 반드시 탈출조건 필요 */
+        while (true) {
+            let name = prompt("이름을 입력하시오");
+            if (name == "stop") break; /* wile 빠져나가기 */
+            alert(name);
+        }
+    </script>
+</body>
+
+</html>

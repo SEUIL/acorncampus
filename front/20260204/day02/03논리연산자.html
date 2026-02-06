@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            논리 연산자 :
+            논리 AND 그리고 (AND -> &&)
+            논리 OR 또는 (OR -> ||)
+            논리 NOT 부정 (NOT -> !)
+        */
+
+        let a = true;
+        let b = false;
+        let c = 10;
+
+        //&& -> 모든 조건이 참인 경우 -> true
+        console.log(c > 5 && c < 15); // true
+        console.log(a && b); // false
+       
+
+        //|| -> 하나라도 참인 경우 -> true
+        console.log(a || b); // true
+        console.log(c < 5 || c > 15); // false
+
+        //! -> 참을 거짓으로, 거짓을 참으로 뒤집음
+        console.log(!a); // false
+        console.log(!b); // true
+        
+        let age=25;
+        let hasId = true
+
+        if(age>=18 && hasId){
+            console.log("입장가능");
+        } else {
+            console.log("입장불가");
+        }
+        
+        
+
+
+
+    </script>
+
+
+</body>
+</html>

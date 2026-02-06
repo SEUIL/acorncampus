@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let tryCnt = 0;
+        const randomSu = Math.floor(Math.random() * 100) + 1; //0~100
+        console.log(randomSu);
+
+        while (true) {
+            tryCnt++;
+            let input = Number(prompt("1~100 사이의 수를 입력"));
+
+            if (input === randomSu) {
+                break;
+            }
+            else if (input > randomSu) {
+                alert("더 작은 수입니다");
+            }
+            else {
+                alert("더 큰 수입니다");
+            }
+
+        }
+        if (tryCnt <= 3) {
+            document.write("3번 이하로 정답, 축하! 간식 제공")
+        }
+        else {
+            document.write(tryCnt + "회로 정답 축하!")
+        }
+    </script>
+
+</body>
+
+</html>
