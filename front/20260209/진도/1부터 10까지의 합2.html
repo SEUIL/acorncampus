@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            입력 x
+            출력 sum
+            처리 i
+
+            처리과정
+
+        */
+
+        let i = 0;
+        let sum = 0;
+        while (i <= 10) {
+            sum += i;
+            i++;
+        }
+        document.write("1~10까지의 합 : " + sum);
+
+        //반복문 사용하지 않고 구하기2 (직접구하기)
+        let i2 = 0;
+        let sum2 = 0;
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        i2++
+        sum2 += i2
+
+        document.write("<br>1~10까지의 합(반복문X) : " + sum);
+
+        //while문 사용해서 하기
+        let i3 = 1;
+        let sum3 = 0;
+        while (i3 <= 10) {
+            sum3 += i3;
+            i3++;
+        }
+        document.write("<br>while문을 사용한 1~10까지의 합 : " + sum3);
+        
+    </script>
+</body>
+
+</html>

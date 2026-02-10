@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            1. 숫자 퀴즈 게임
+                문제: 컴퓨터가 1부터 100 사이의 난수를 생성합니다. 사용자는 이 숫자를 맞춰야 합니다.
+                사용자가 입력한 숫자가 정답보다 작으면 "더 큰 숫자입니다"를 출력합니다.
+                사용자가 입력한 숫자가 정답보다 크면 "더 작은 숫자입니다"를 출력합니다.
+                정답을 맞추면 "정답입니다! 시도 횟수: X번"을 출력하고 종료합니다.
+        */
+
+        function playGame() {
+            const answer = Math.floor(Math.random() * 100) + 1;
+            let tryCount = 0;
+
+            while (true) {
+                tryCount++;
+                const userInput = prompt("1~100 사이의 수를 입력하세요.");
+
+                // 취소 시퀀스
+                if (userInput === null) {
+                    alert("게임을 종료합니다.");
+                    return null; 
+                }
+
+                const userNumber = Number(userInput);
+
+                if (isNaN(userNumber) || userInput.trim() === "") {
+                    alert("유효한 숫자를 입력해주세요.");
+                    tryCount--; // 시도 횟수에서 제외
+                    continue;
+                }
+
+                // 정답 비교
+                if (userNumber === answer) {
+                    alert("정답입니다!");
+                    return tryCount;
+                } else if (userNumber > answer) {
+                    alert("더 작은 수입니다.");
+                } else {
+                    alert("더 큰 수입니다.");
+                }
+            }
+        }
+
+        function displayResult(tries) {
+            if (tries === null) {
+                document.write("<h3>게임이 취소되었습니다.</h3>");
+                return;
+            }
+
+            if (tries <= 3) {
+                document.write(`<h3>축하합니다! 간식 획득</h3>`);
+                document.write(`<p>${tries}번 시도했습니다.</p>`);
+            } else {
+                document.write(`<h3>정답입니다! 축하합니다!</h3>`);
+                document.write(`<p>${tries}번 시도했습니다.</p>`);
+            }
+        }
+
+        // --- 게임 실행 ---
+        const finalTryCount = playGame();
+        displayResult(finalTryCount);
+    </script>
+</body>
+
+</html>

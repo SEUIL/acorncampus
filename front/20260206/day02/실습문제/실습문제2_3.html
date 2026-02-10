@@ -11,14 +11,24 @@
     <script>
 
         //사칙연산 계산기
+        
         while (true) {
-            let num01 = prompt("숫자를 입력하시오('그만' 을 입력하면 계산기가 종료됩니다.)")
-            if (operator == "그만" || num01 == "그만" || num02 == "그만") {
+            
+            let num01 
+            let num02 
+            let operator 
+
+            let numberAndOperator = prompt("숫자와 연산자를 입력하시오(예: 10,10,+ ), '그만' 입력 시 종료");
+
+            if (numberAndOperator === "그만") {
                 break;
             }
-            let num02 = prompt("숫자를 입력하시오")
-            let operator = prompt("연산자를 입력하시오")
 
+            let parts = numberAndOperator.split(",");
+            num01 = parts[0];
+            num02 = parts[1];
+            operator = parts[2];
+            
             num01 = Number(num01)
             num02 = Number(num02)
 
@@ -32,7 +42,10 @@
                 sum = num01 * num02
             } else if (operator == "/") {
                 sum = num01 / num02
-            } 
+            } else if(operator == "%"){
+                sum = num01 % num02
+            }
+            
             alert(sum)
         }
 

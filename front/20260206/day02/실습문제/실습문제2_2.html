@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2. BMI 계산기
+
+        let kg = parseInt(prompt("몸무게(kg) 입력"))
+        let cm = parseInt(prompt("키(cm) 입력"))
+
+        if (kg <= 0 || cm <= 0) {
+            document.write("잘못된 입력입니다. 0보다 큰 숫자만 입력해주세요.");
+        } else {
+            let m = cm / 100
+            let bmi = kg / (m * m)
+ 
+            if (bmi >= 25) {
+                document.write("비만")
+            }
+            else if (bmi >= 23) {
+                document.write("과체중")
+            }
+            else if (bmi >= 18.5) {
+                document.write("정상")
+            } else { 
+                document.write("저체중")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            문제 3: 가위바위보 게임
+            - 컴퓨터의 선택을 랜덤하게 결정하는 함수(getComputerChoice)를 만드세요. (가위, 바위, 보 중 하나)
+            - 사용자의 선택과 컴퓨터의 선택을 비교하여 승자를 결정하는 함수(playRound)를 만드세요.
+              (승리, 패배, 무승부 중 하나의 결과를 반환)
+            - prompt로 사용자 입력을 받고, playRound 함수를 호출하여 결과를 alert로 보여주세요.
+        */
+
+        function getComputerChoice(){
+            let choice = Math.floor(Math.random() * 3)
+            
+            if(choice == 0){
+                return "가위"
+            }else if(choice == 1){
+                return "바위"
+            }else if(choice == 2){
+                return "보"
+            }
+        }
+
+        let choiceDoc = []
+
+        function playRound(choice){
+            let computerChoice = getComputerChoice()
+            let playerChoice = choice
+            choiceDoc = [computerChoice, playerChoice]
+
+            if(playerChoice == computerChoice){
+                return "무승부";
+            }else if(playerChoice == "가위" && computerChoice == "보"){
+                return "승리";
+            }else if(playerChoice == "바위" && computerChoice == "가위"){
+                return "승리";
+            }else if(playerChoice == "보" && computerChoice == "바위"){
+                return "승리";
+            }else{
+                return "패배";
+            }
+            
+        }
+
+        function game(){
+            let playerChoice = prompt("가위, 바위, 보 중 하나를 선택하세요.");
+
+            document.writeln("<h3> 결과 : " + playRound(playerChoice) + "입니다.</h3> <br>" 
+            + "컴퓨터 : " + choiceDoc[0] + "<br>" 
+            + "사용자 : " + choiceDoc[1]);
+        }
+
+        game()
+
+
+    </script>
+</body>
+</html>

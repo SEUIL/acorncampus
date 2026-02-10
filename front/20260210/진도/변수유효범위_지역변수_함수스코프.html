@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function a() { // 
+            let cnt = 0;  //지역변수 
+            cnt++;  // cnt = cnt +1 ; 
+        }
+
+        a();
+        a();
+        a();
+        // alert( cnt);       오류발생:영석    => 함수는 반환시 만든 변수를 모두 정리함 
+
+
+        function b() {
+            let cnt = 0;
+            cnt++;
+            alert(cnt);
+        }
+        b();
+        b();
+        b();                //실행값 예상  ( 1 출력 세번)
+
+
+        //함수를 호출할때 마다 1씩 증가된 값을 사용하고 싶다면 => 전역변수 활용
+        let cnt = 0;
+        function c() {
+            cnt++;
+            alert(cnt);
+        }
+
+        c();
+        c();
+        c();
+    </script>
+</body>
+
+</html>

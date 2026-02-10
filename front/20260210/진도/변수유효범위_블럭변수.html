@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            변수 선언 위치에 따른 변수들의 종류
+
+            1. 전역 변수 (Global Variable)
+               - 함수나 블록 외부에서 선언된 변수
+               - 프로그램 전체에서 접근 가능하며, 프로그램이 종료될 때까지 메모리에 유지됨
+
+            2. 지역 변수 (Local Variable)
+               - 함수 내부에서 선언된 변수
+               - 해당 함수 내에서만 접근 가능하며, 함수 실행이 끝나면 메모리에서 소멸됨
+
+            3. 블록 변수 (Block-scoped Variable)
+               - let, const 키워드로 if문, for문 등의 중괄호 { } 블록 내부에서 선언된 변수
+               - 해당 블록 내부에서만 접근 가능함
+        */
+
+
+
+        //변수선언 위치에 따라 전역변수,  지역(함수)변수, 블럭변수 (중괄호 블럭) :  for, if 
+
+        //블럭변수예시
+        for (let i = 1; i <= 5; i++) {  //i변수  for블럭안에서만 유효함
+            //   (i변수를 사용할 수 있다. for문 밖에서는 사용할 수 없다)
+            document.write("자바스크립트 재밌어요 ^^");
+        }
+        // document.write( i);  i변수는 선언되지 않은 변수로 오류가 남 . for안의 변수를 사용할 수 없다 
+
+        if (5 > 3) {
+            let result = "5가 크다";
+            document.write("if블럭안에서 선언된 변수 사용하기" + result);
+        }
+        //ocument.write( "if블럭안에서 선언된 변수 사용하기" + result);   =>if블럭안에서 선언된 변수는 밖에서 사용불가
+        //임의로 블럭을 만들어 사용할 수 있다
+        //변수의 스코프(유효범위)를 줄일 수 있다
+        {
+            let k = 10;
+            document.write(k);
+        }
+        {
+            let k = 10;
+            document.write(k);
+        }
+
+
+    </script>
+</body>
+
+</html>

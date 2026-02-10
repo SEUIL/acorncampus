@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //3의 배수, 5의 배수  3과5의 배수 출력하기
+
+        // 각 결과를 담을 문자열 변수를 준비합니다.
+        let outputFor3 = "3의 배수 <br>";
+        let outputFor5 = "<br> 5의 배수 <br>";
+        let outputFor3And5 = "<br> 3과 5의 배수 <br>";
+
+        // for문을 한 번만 사용하여 1부터 15까지의 숫자를 확인합니다.
+        for (let i = 1; i <= 15; i++) {
+            // 3의 배수인 경우
+            if (i % 3 === 0) {
+                outputFor3 += i + "<br>";
+            }
+
+            // 5의 배수인 경우
+            if (i % 5 === 0) {
+                outputFor5 += i + "<br>";
+            }
+
+            // 3과 5의 공배수인 경우
+            if (i % 3 === 0 && i % 5 === 0) {
+                outputFor3And5 += i + "<br>";
+            }
+        }
+
+        // 준비된 문자열들을 한 번에 출력합니다.
+        document.write(outputFor3);
+        document.write(outputFor5);
+        document.write(outputFor3And5);
+
+    </script>
+
+</body>
+
+</html>

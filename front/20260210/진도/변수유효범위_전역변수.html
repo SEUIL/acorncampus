@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //전역변수 : 함수밖(외부)에서 만들어지는 변수 
+        //어떤함수에서도 접근 가능하다
+        //전역변수는 최소한. 꼭 필요한 경우에는 만들자 
+
+        let cnt = 0;  //전역변수 선언한기 , 모든영역에서 접근 가능 
+
+        function a() { //cnt값을 증가
+            cnt++;  // cnt = cnt +1 ; 
+        }
+        function b() { //cnt값을 증가 
+            cnt++;
+        }
+
+        a();
+        a();
+        b();
+        b();
+        b();
+        alert(cnt); D
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            단위 변환기 (인치 ↔️ 센티미터)
+                입력 함수: 사용자에게 변환할 값과 단위를 입력받습니다. (예: "10인치")
+                변환 함수: 입력된 단위에 따라 값을 계산합니다. (1인치 = 2.54cm)
+                결과 출력 함수: "10인치는 25.4cm 입니다." 와 같이 변환된 결과를 출력합니다.
+        */
+
+        // --- 1. 입력 기능 ---
+        // 'function'은 특정 기능을 하는 코드 묶음(함수)을 만드는 약속입니다.
+        // 여기서는 사용자에게 값을 입력받는 기능을 만들었습니다.
+        function input(){
+            // prompt: 사용자에게 메시지를 보여주고 값을 입력받는 창을 띄웁니다.
+            let data = prompt("변환할 값(인치)를 입력하세요");
+
+            // 사용자가 입력한 값은 기본적으로 '글자'입니다. 계산을 위해 '숫자'로 바꿔줍니다.
+            data = Number(data);
+
+            // return: 함수가 일을 마친 후, 최종 결과물(여기서는 숫자 data)을 돌려줍니다.
+            return data;
+        }
+
+        // --- 2. 변환 기능 ---
+        // 인치(inch) 값을 받아서 센티미터(cm)로 계산하는 함수입니다.
+        // (inch)는 이 함수가 작업을 수행하기 위해 외부로부터 받아오는 재료(값)를 의미합니다.
+        function inch_cm(inch){
+            // 1인치는 2.54cm이므로, 받은 인치 값에 2.54를 곱합니다.
+            let result = inch * 2.54;
+
+            // 계산된 결과(result)를 돌려줍니다.
+            return result;
+        }
+        
+
+        // --- 3. 출력 기능 ---
+        // 계산 전의 인치(inch) 값과 계산 후의 센티미터(cm) 값을 받아서 화면에 보여주는 함수입니다.
+        function output(inch, cm){
+            // document.writeln: HTML 문서에 괄호 안의 내용을 직접 써서 보여주는 명령어입니다.
+            document.writeln("<h3> 단위 변환기 결과 </h3>");
+            document.writeln("<hr><br>");
+            // 받아온 inch 값과 cm 값을 조합하여 "10인치는 25.4cm 입니다." 와 같은 문장을 만듭니다.
+            document.writeln(inch + "인치는 " + cm + "cm 입니다.");
+        }
+
+        // --- 4. 프로그램 실행을 총괄하는 메인 함수 ---
+        // 위에서 만든 3개의 함수(기능)를 순서대로 실행시키는 역할을 합니다.
+        function index(){
+            // 1. input 함수를 실행하고, 그 결과(사용자가 입력한 숫자)를 'inch'라는 상자에 저장합니다.
+            let inch = input();
+            // 2. inch_cm 함수를 실행합니다. 이때 'inch' 상자에 담긴 값을 재료로 넣어줍니다.
+            //    계산된 결과는 'cm'라는 상자에 저장합니다.
+            let cm = inch_cm(inch);
+            // 3. output 함수를 실행합니다. 'inch'와 'cm' 상자에 담긴 두 값을 모두 재료로 넣어줍니다.
+            output(inch, cm);
+        }
+        
+        // --- 프로그램 시작! ---
+        // index 함수를 호출(실행)하여 전체 프로그램을 시작합니다.
+        index();
+
+
+    </script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            break문 : 반복문에서 break를 사용하면 자신이 속한 반복문을 빠져나오게 됌
+        */
+
+        let i = 0;
+        while(true){
+            i++;
+            document.writeln("hi "+ i + " <br>")
+            if(i == 10){
+                break;
+            }
+        }
+
+        for(let j = 0; j < 10; j++){
+            document.writeln("hi "+ j + " <br>")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 만들기 실습 4 - 미니 쇼핑몰</title>
+</head>
+
+<body>
+    <script>
+        /*
+            함수 만들기 실습 4: 미니 쇼핑몰 장바구니 만들기
+
+            요구사항:
+            1. 상품 목록(products)은 배열과 객체 형태 정의되어 있습니다.
+            2. 사용자에게 상품 목록을 보여주고, 원하는 상품을 장바구니(cart)에 추가할 수 있어야 합니다.
+            3. 사용자가 '결제'를 입력하면, 장바구니에 담긴 상품들과 총 결제 금액을 보여주고 프로그램을 종료합니다.
+
+
+            아래 함수들을 직접 구현해 보세요.
+        */
+
+        // 1. 상품 데이터
+        const products = [
+            { id: 1, name: "노트북", price: 1200000 },
+            { id: 2, name: "마우스", price: 30000 },
+            { id: 3, name: "키보드", price: 55000 },
+            { id: 4, name: "모니터", price: 350000 },
+            { id: 5, name: "USB 허브", price: 25000 }
+        ];
+
+        // 2. 장바구니 배열
+        let cart = [];
+
+        /*
+            - 기능: 전체 상품 목록을 alert 창으로 보기 좋게 출력합니다.         
+        */
+        function displayProducts(products) {
+            let display = "--- 상품 목록 ---\n";
+            for (let i = 0; i < products.length; i++) {
+                display += `${i + 1}. ${products[i].name} - ${products[i].price.toLocaleString()}원\n`;
+            }
+            alert(display)
+        }
+
+        /*
+            - 기능: 상품 ID를 이용해 products 배열에서 해당 상품 객체를 찾아 반환합니다.
+        */
+        function findProductById(productId) {
+
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].id == productId) {
+                    return products[i];
+                }
+            }
+
+            return null; // null을 반환
+
+        }
+
+        /*
+            - 기능: 사용자로부터 입력받은 상품 ID를 이용해 장바구니에 상품을 추가합니다.
+        */
+        function addToCart() {
+            const productId = prompt("원하는 상품 번호를 입력하세요. (결제하시려면 '결제' 입력)");
+
+            if (productId === "결제") {
+                return false;
+            }
+
+            //숫자로 형변환
+            const foundProduct = findProductById(Number(productId));
+
+            if (foundProduct === null) {
+                alert("존재하지 않는 상품입니다.");
+            } else {
+                cart.push(foundProduct);
+                alert(`장바구니에 ${foundProduct.name}을(를) 추가했습니다.`);
+            }
+            return true;
+        }
+
+        /*
+            - 기능: 장바구니(cart)에 있는 모든 상품의 총 가격을 계산하여 반환합니다.
+        */
+        function calculateTotal(cart) {
+            let sum = 0;
+            for (let i = 0; i < cart.length; i++) {
+                sum += cart[i].price
+            }
+            return sum;
+        }
+
+
+        /*
+            - 기능: 계산이 끝난 후, 최종 장바구니 목록과 총 결제 금액을 document.write()로 출력합니다.
+        */
+        function displayCartSummary(cart, total) {
+            document.write("<h2>최종 결제 내역</h2>");
+            document.write("<ul>");
+
+            for(let i = 0; i < cart.length; i++){
+                document.write(`<li>${cart[i].name} - ${cart[i].price.toLocaleString()}원</li>`);
+            }
+
+            document.write("</ul>");
+            document.write("<hr>");
+            document.write(`<p>총 결제 금액: ${total.toLocaleString()}원</p>`);
+        }
+
+        function runShopping() {
+            displayProducts(products);
+            while (addToCart()) { } // addToCart가 false를 반환할 때까지 반복
+            const total = calculateTotal(cart);
+            displayCartSummary(cart, total);
+        }
+
+        runShopping();
+
+    </script>
+</body>
+
+</html>
