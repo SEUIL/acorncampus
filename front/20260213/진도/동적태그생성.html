@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 동적태그를 생성하는 예제 -->
+    <button onclick="addDiv()" >클릭</button>
+
+    <div id="result">
+
+    </div>
+
+
+    <script>
+        function addDiv() {
+            // 1. 새로운 div 요소를 생성합니다.
+            const newDiv = document.createElement("div");
+
+            // 2. 생성된 요소에 내용을 추가합니다.
+            newDiv.innerText = "새로 생성된 div입니다.";
+
+            // 3. 스타일을 적용할 수도 있습니다          
+            // style.assign을 사용하여 여러 스타일을 한 번에 적용할 수 있습니다.
+            Object.assign(newDiv.style, {
+                backgroundColor: "lightyellow",
+                border: "1px solid orange",
+                margin: "5px 0",
+                padding: "10px"
+            });
+            
+            // 4. id가 result인 부모 요소에 자식으로 추가합니다.
+            const result = document.getElementById("result");
+            result.appendChild(newDiv);
+
+            //이벤트 추가
+            newDiv.addEventListener("click", function(){
+                this.remove()
+            })
+        }
+    </script>
+
+</body>
+
+</html>

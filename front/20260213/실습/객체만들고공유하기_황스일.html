@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식 메뉴 관리</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        form {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        form select,
+        form input,
+        form button {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-color: #007bff;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>음식 메뉴 관리</h1>
+
+    <form id="add-menu-form">
+        <label for="main-category">분류:</label>
+        <select id="main-category"></select>
+
+        <label for="sub-category">세부 분류:</label>
+        <select id="sub-category"></select>
+
+        <label for="new-menu-name">새 메뉴 이름:</label>
+        <input type="text" id="new-menu-name" placeholder="예: 된장찌개" required>
+
+        <label for="new-menu-price">가격:</label>
+        <input type="number" id="new-menu-price" placeholder="예: 8000" required>
+
+        <button type="submit">메뉴 추가</button>
+    </form>
+
+    <hr>
+
+    <div id="menu-display">
+        <!-- 메뉴 리스트 -->
+    </div>
+
+
+    <script>
+        let foodMenu = {
+            "한식": {
+                "밥류": [{ name: "비빔밥", price: 8000 }, { name: "김치볶음밥", price: 7500 }, { name: "불고기덮밥", price: 9000 }],
+                "면류": [{ name: "라면", price: 4000 }, { name: "비빔면", price: 4500 }, { name: "잔치국수", price: 6000 }],
+                "국/찌개": [{ name: "김치찌개", price: 8000 }, { name: "된장찌개", price: 8000 }, { name: "미역국", price: 7000 }],
+                "고기류": [{ name: "제육볶음", price: 9000 }, { name: "삼겹살", price: 15000 }, { name: "갈비", price: 20000 }]
+            },
+            "일식": {
+                "밥류": [{ name: "초밥", price: 12000 }, { name: "회덮밥", price: 10000 }, { name: "규동", price: 9000 }],
+                "면류": [{ name: "우동", price: 7000 }, { name: "소바", price: 8000 }, { name: "라멘", price: 9500 }],
+                "튀김류": [{ name: "돈카츠", price: 10000 }, { name: "새우튀김", price: 8000 }, { name: "고로케", price: 5000 }]
+            },
+            "중식": {
+                "면류": [{ name: "짜장면", price: 6000 }, { name: "짬뽕", price: 8000 }, { name: "우동", price: 7000 }],
+                "밥류": [{ name: "볶음밥", price: 7000 }, { name: "잡채밥", price: 8500 }, { name: "마파두부덮밥", price: 9000 }],
+                "튀김/고기류": [{ name: "탕수육", price: 20000 }, { name: "깐풍기", price: 25000 }, { name: "유린기", price: 28000 }]
+            },
+            "양식": {
+                "면류": [{ name: "까르보나라", price: 13000 }, { name: "알리오올리오", price: 12000 }, { name: "토마토파스타", price: 12000 }],
+                "밥류": [{ name: "치즈리조또", price: 14000 }, { name: "해산물필라프", price: 15000 }, { name: "피자", price: 18000 }],
+                "구이/튀김류": [{ name: "티본스테이크", price: 55000 }, { name: "함박스테이크", price: 16000 }, { name: "돈가스", price: 11000 }]
+            }
+        };
+
+        const menuDisplay = document.getElementById('menu-display');
+        const addMenuForm = document.getElementById('add-menu-form');
+        const mainCategorySelect = document.getElementById('main-category');
+        const subCategorySelect = document.getElementById('sub-category');
+        const newMenuInput = document.getElementById('new-menu-name');
+        const newMenuPriceInput = document.getElementById('new-menu-price');
+
+        // Object.keys(객체): 주어진 객체의 '키(key)'들만 추출하여 새로운 배열로 반환
+        const categories = Object.keys(foodMenu);  // 결과 => ["한식", "일식", "중식", "양식"]
+
+        // 각 메인 카테고리에 속한 서브 카테고리들의 키를 객체 형태로 저장
+        let subCategories = {};
+        categories.forEach(category => {
+            subCategories[category] = Object.keys(foodMenu[category]);
+        });
+
+        // 드롭다운 메뉴에 카테고리 추가
+        /* 결과값 예상
+            <select id="main-category">
+                <option value="한식">한식</option>
+                <option value="일식">일식</option>
+                <option value="중식">중식</option>
+                <option value="양식">양식</option>
+            </select>
+        */
+        function populateMainCategories() {
+            categories.forEach((category, index) => {
+                const option = document.createElement('option');
+                option.value = category; // value를 category 이름으로 설정
+                option.textContent = category;
+                mainCategorySelect.appendChild(option);
+            });
+        }
+
+        // 선택된 메인 카테고리에 따라 서브 카테고리 드롭다운 업데이트
+        /* 결과값 예상
+            <select id="sub-category">
+                <option value="밥류">밥류</option>
+                <option value="면류">면류</option>
+                <option value="국/찌개">국/찌개</option>
+                <option value="고기류">고기류</option>
+            </select>
+        */
+        function updateSubCategories(mainCategory) {
+            subCategorySelect.innerHTML = ''; // 기존 옵션 비우기
+            subCategories[mainCategory].forEach((subCategory) => {
+                const option = document.createElement('option');
+                option.value = subCategory; // value를 subCategory 이름으로 설정
+                option.textContent = subCategory;
+                subCategorySelect.appendChild(option);
+            });
+        }
+
+        //메뉴 뿌려주기
+        function renderMenu() {
+            menuDisplay.innerHTML = '<h1>음식 메뉴 리스트</h1>'; //리셋
+
+            for (let i = 0; i < categories.length; i++) {
+                let category = categories[i];
+                let html = `<h2>${category}</h2>`;
+                let subCategoryList = subCategories[category]; //현재 메인 카테고리에 해당하는 서브 카테고리 배열을 가져옴
+
+                for (let j = 0; j < subCategoryList.length; j++) {
+                    let subCategory = subCategoryList[j]; //현재 서브 카테고리 이름을 가져옴 (예: "밥류", "면류" 등)
+
+                    let menus = foodMenu[category][subCategory] || []; 
+                    //메뉴 배열을 가져오며, 데이터가 없을 경우 빈 배열을 할당 (예: foodMenu["한식"]["밥류"])
+                    
+
+                    html += `<strong>${subCategory} : </strong>`;
+                    // 메뉴 객체 배열을 "이름(가격)" 형태의 문자열로 변환하여 join
+                    html += menus.map(menu => `${menu.name}(${menu.price.toLocaleString()}원)`).join(", "); 
+                    //map()을 사용하여 각 메뉴 객체를 문자열로 가공하고, join으로 연결 (예 : "비빔밥(8000원), 김치볶음밥(7500원)"
+                    
+                    html += "<br>";
+                }
+                menuDisplay.innerHTML += html;
+            }
+        }
+
+        /** 
+         * 메인 카테고리 선택이 변경되면 서브 카테고리 목록을 업데이트
+         * 
+         * mainCategorySelect에서 change 이벤트가 발생할 경우
+         * (event) => {...} 함수를 실행함
+          */
+        mainCategorySelect.addEventListener('change', (event) => {
+            const selectedMainCategory = event.target.value;
+            // event.target은 이벤트가 발생한 요소(여기서는 <select> 태그)를 가리키며, 
+            // .value는 해당 요소에서 현재 선택된 옵션의 값(value)을 가져옴
+            updateSubCategories(selectedMainCategory);
+        });
+
+        // '메뉴 추가' 폼이 제출될 때의 동작
+        addMenuForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // 새로고침 막기
+
+            const mainCategory = mainCategorySelect.value;
+            const subCategory = subCategorySelect.value;
+            const newMenuName = newMenuInput.value.trim(); // trim() : 띄어쓰기 제거
+            const newMenuPrice = parseInt(newMenuPriceInput.value, 10); //10진수
+
+
+            if (newMenuName === "") {
+                alert("메뉴 이름을 입력해주세요.");
+                return;
+            }
+
+            if (isNaN(newMenuPrice) || newMenuPrice <= 0) {
+                alert("유효한 가격을 입력해주세요.");
+                return;
+            }
+
+            // 메뉴 이름과 가격을 객체로 묶어서 추가
+            foodMenu[mainCategory][subCategory].push({ name: newMenuName, price: newMenuPrice });
+
+            renderMenu();
+
+            newMenuInput.value = ''; // 입력 필드 초기화
+            newMenuPriceInput.value = ''; // 가격 입력 필드 초기화
+            alert(`'${newMenuName}' 메뉴가 성공적으로 추가되었습니다!`);
+        });
+
+
+        // --- 초기화 실행 ---
+        populateMainCategories();
+        updateSubCategories(categories[0]); // 첫 번째 카테고리로 초기화
+        renderMenu(); 
+    </script>
+</body>
+
+</html>

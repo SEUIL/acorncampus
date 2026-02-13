@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        let book = {
+            bookName: "뇌",
+            bookPrice: 15000,
+            bookPublisher: "열린책들",
+            bookAuthor: "베르나르베르베르"
+        }
+
+
+        
+        //객체 속성 접근  :  .연산자
+        console.log(book.bookName);
+        console.log(book.bookPrice);
+        console.log(book.bookPublisher);
+        console.log(book.bookAuthor);
+
+
+
+        //객체 속성접근 : [] 대괄호 연산자
+        console.log(book["bookName"]);
+        console.log(book["bookPrice"]);
+        console.log(book["bookPublisher"]);
+        console.log(book["bookAuthor"]);
+
+
+
+
+        //객체배열 
+        let books=[                 
+            {
+                bookName: "뇌",
+                bookPrice: 15000,
+                bookPublisher: "열린책들",
+                bookAuthor: "베르나르베르베르"
+            } ,
+            {
+                bookName: "이것이 자바다",
+                bookPrice: 30000,
+                bookPublisher: "한빛미디어",
+                bookAuthor: "신용권"
+            }
+
+        ];
+
+
+        let book1  =  books[0];
+        let book2  =  books[1];
+
+        alert( book1.bookName);
+        alert( book2.bookName);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .login-wrap{
+            width: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .tab-menu{
+            display: flex;
+        }
+        .tab-menu > div{
+            border: 1px solid black;
+            width: 50%;
+        }
+        .member, .no-member{
+            display: none;
+        }
+        .member{
+            border: 1px solid black;
+            height: 200px;
+        }
+        .no-member{
+            border: 1px solid black;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrap">
+        <div class="tab-menu">
+            <div onclick="showMember()">회원</div>
+            <div onclick="showNoMember()">비회원</div>
+        </div>
+
+        <div class="member" style="display: block;">
+            회원
+        </div>
+
+        <div class="no-member" style="display: none;">
+            비회원
+        </div>
+
+    </div>
+
+    <script>
+        function showMember() {
+            const member = document.querySelector(".member");
+            const noMember = document.querySelector(".no-member");
+
+            member.style.display = "block";
+            noMember.style.display = "none";
+        }
+
+        function showNoMember(){
+            const member = document.querySelector(".member");
+            const noMember = document.querySelector(".no-member");
+
+            member.style.display = "none";
+            noMember.style.display = "block";
+            
+        }
+    </script>
+</body>
+</html>

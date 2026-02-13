@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        let myinfo = {
+            name : "송주창",
+            age : 26,
+            weight : 74,
+            tired : 10,    
+            stress : 10,    
+
+            eat : function(){
+                this.weight += 0.5;
+            },
+
+            exercise : function(){
+                this.tired += 5;
+                this.stress -= 4;
+            },
+
+            game : function(){
+                let x = Math.floor( Math.random() * 2);
+                if(x==0){
+                    this.stress += 2;
+                }else{
+                    this.stress -= 2;
+                }
+                this.tired += 2;
+            },
+
+            sleep : function() {
+                this.tired -= 10;
+            },
+
+        }
+
+        let y = prompt("원하는 행동을 입력하세요. 1) 식사 2) 운동 3) 게임 4) 수면");
+        if(y == 1){
+            myinfo.eat();
+            alert(`체중이 0.5kg 증가하여 체중 = ${myinfo.weight}kg`)
+        }else if(y == 2){
+            myinfo.exercise();
+            alert(`피로도가 5만큼 증가하여 피로도 = ${myinfo.tired}, 스트레스가 감소하여 스트레스 = ${myinfo.stress}`);
+        }else if(y == 3){
+            myinfo.game();
+            alert(`피로도가 2만큼 증가하여 피로도 = ${myinfo.tired}, 스트레스가 변화하여 스트레스 = ${myinfo.stress}`);
+        }else if(y == 4){
+            myinfo.sleep();
+            alert(`피로도가 10 감소하여 피로도 = ${myinfo.tired}`);
+        }
+
+ 
+        
+
+        </script>
+</body>
+</html>

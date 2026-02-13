@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체와 배열중의 선택 기준
+
+        /*
+            1. 객체(Object)를 선택하는 기준
+            - 데이터가 이름(Key)을 가져야 할 때 사용한다.
+            - 각각의 데이터가 서로 다른 속성(성질)을 나타낼 때 적합하다.
+            - 예: 한 사람의 정보 (이름, 나이, 키, 주소)
+        */
+        let person = {
+            name: "홍길동",
+            age: 25,
+            height: 180
+        };
+        console.log("객체 출력 (이름으로 접근):", person.name);
+
+        /*
+            2. 배열(Array)을 선택하는 기준
+            - 데이터의 순서(Index)가 중요할 때 사용한다.
+            - 동일한 성격의 데이터 목록을 관리할 때 적합하다.
+            - 예: 학생 명단, 과일 목록, 점수 리스트
+        */
+        let fruits = ["사과", "바나나", "포도"];
+        console.log("배열 출력 (순서로 접근):", fruits[0]);
+
+        /*
+            3. 실무적인 조합 (배열 안에 객체)
+            - 여러 개의 구조화된 데이터를 목록으로 관리할 때 가장 많이 사용된다.
+        */
+        let members = [
+            { id: 1, name: "김철수", grade: "A" },
+            { id: 2, name: "이영희", grade: "B" },
+            { id: 3, name: "박민수", grade: "A" }
+        ];
+
+        console.log("--- 회원 목록 출력 ---");
+        members.forEach(member => {
+            console.log(`ID: ${member.id}, 이름: ${member.name}, 등급: ${member.grade}`);
+        });
+        
+
+    </script>
+</body>
+</html>

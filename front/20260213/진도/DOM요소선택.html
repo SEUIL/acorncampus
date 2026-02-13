@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> DOM 다루기 </h1>
+
+    <p>
+        웹문서를 자바스크립트에서 사용할 수 있도록 객체형태로 제공함 
+    </p>
+
+    <h2>id로 선택하기</h2>
+    <p>id가 wrap인 요소를 선택하여 스타일 변경하기</p>
+
+    <div id="wrap">이곳은 wrap 아이디를 가진 영역입니다.</div>
+
+    <!-- 버튼이 클릭되면 스타일 변경 -->
+    <button onclick="change()">스타일 적용</button>
+    <button onclick="unChange()">스타일 취소</button> 
+
+    <script>
+        // 1. 요소 선택하기
+        // getElementById: id 속성값을 사용하여 요소를 선택합니다.
+        const wrap = document.getElementById("wrap");
+        
+        // querySelectorAll: CSS 선택자를 사용하여 모든 버튼 요소를 선택합니다. (배열과 유사한 NodeList 반환)
+        const btns = document.querySelectorAll("button");
+
+
+
+        // 2. 스타일 적용 버튼 (첫 번째 버튼) 클릭 이벤트
+         function change() {
+            wrap.style.backgroundColor = "gold";
+            wrap.style.padding = "20px";
+            wrap.style.border = "2px solid orange";
+            wrap.style.fontWeight = "bold";
+            wrap.style.color = "red";
+        };
+
+        // 3. 스타일 취소 버튼 (두 번째 버튼) 클릭 이벤트
+        function unChange() {
+            // 빈 문자열을 할당하면 인라인 스타일이 제거됩니다.
+            wrap.style.backgroundColor = "";
+            wrap.style.padding = "";
+            wrap.style.border = "";
+            wrap.style.fontWeight = "";
+            wrap.style.color = "";
+        };
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // --- 배열 메서드: map() ---
+
+        // 1. map() 메서드란?
+        // - 배열의 각 요소에 대해 주어진 함수를 호출한 결과를 모아 '새로운 배열'을 반환하는 메서드입니다.
+        // - 원본 배열은 변경되지 않습니다. (불변성 유지)
+        // - forEach가 단순히 반복 실행만 하는 반면, map은 각 요소를 '변환(transform)'하여 새로운 결과물을 만드는 데 중점을 둡니다.
+        // - 콜백 함수는 (요소, 인덱스, 배열) 순서로 인자를 받을 수 있습니다.
+
+        // map매서드
+        // 배열의 요소를 callback을 사용하여 차례대로 처리한다
+        // callback에서 반환한 값으로 새로운 배열을 만들어서 리턴함 
+        // map( callback) // 인수로 넘긴 함수에는 인수 세개( value, index, array)가 전달되며 반드시 return 해야함
+        // 순서대로 매개변수를 작성하면됨
+        // 필요없는 정보는 받지 않아도 됨
+        // 매개변수의 순서를 지켜야 함
+
+        console.log("--- 예제 1: 숫자 배열의 각 요소를 제곱하기 ---");
+        const numbers = [1, 2, 3, 4, 5];
+
+        // map을 사용하여 각 숫자를 제곱한 새로운 배열 생성
+        const squaredNumbers = numbers.map(function (num, index, arr) {
+            console.log("num : " + num); //요소 1,2,3,4,5 -> 배열에서 뽑아낸 요소
+            console.log("index : " + index); //인덱스 0,1,2,3,4 -> 배열에서 뽑아낸 요소의 인덱스 번호
+            console.log("arr : " + arr); //배열 [1,2,3,4,5] -> numbers 배열
+            return num * num;
+        });
+
+        console.log("원본 배열:", numbers); // [1, 2, 3, 4, 5] (변경되지 않음)
+        console.log("제곱된 배열:", squaredNumbers); // [1, 4, 9, 16, 25] (새로운 배열)
+
+        // 화살표 함수로 더 간결하게 표현
+        const squaredNumbersArrow = numbers.map(num => num * num);
+        console.log("제곱된 배열 (화살표 함수):", squaredNumbersArrow);
+
+
+        console.log("\n--- 예제 2: 객체 배열에서 특정 속성만 추출하기 ---");
+        const users = [
+            { id: 1, name: "김철수", email: "chulsoo@example.com" },
+            { id: 2, name: "이영희", email: "younghee@example.com" },
+            { id: 3, name: "박민준", email: "minjun@example.com" }
+        ];
+
+        // map을 사용하여 각 사용자 객체에서 '이름'만 추출한 새로운 배열 생성
+        const userNames = users.map(user => user.name);
+        console.log("사용자 이름 배열:", userNames); // ["김철수", "이영희", "박민준"]
+
+        // 이메일만 추출
+        const userEmails = users.map(user => user.email);
+        console.log("사용자 이메일 배열:", userEmails);
+
+
+        console.log("\n--- 예제 3: 데이터를 원하는 형태의 HTML 문자열로 변환하기 ---");
+        const products = [
+            { name: "노트북", price: 1200000 },
+            { name: "스마트폰", price: 800000 },
+            { name: "키보드", price: 50000 }
+        ];
+
+        // map을 사용하여 각 제품 정보를 li 태그 문자열로 구성된 배열로 변환
+        const productListItems = products.map(product => {
+            return `<li>${product.name}: ${product.price.toLocaleString()}원</li>`;
+        });
+
+        console.log("HTML 리스트 아이템 배열:", productListItems);
+
+        // 생성된 배열을 join() 메서드로 합쳐서 하나의 HTML 문자열로 만듦
+        const productHtml = `<ul>\n${productListItems.join('\n')}\n</ul>`;
+        console.log("최종 HTML 문자열:\n", productHtml);
+        document.body.innerHTML += productHtml;
+
+
+    </script>
+</body>
+
+</html>

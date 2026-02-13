@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>querySelector 이용하여 요소 선택하기</h2>
+    <p>무조건 한개를 반환한다</p>
+
+    <div id="item">item01</div>
+    <div class="item">item02</div>
+    <div class="item">item03</div>
+
+    <button onclick="change()">스타일 적용</button>
+    <button onclick="unChange()">스타일 취소</button> 
+
+    <script>
+        // querySelector: CSS 선택자를 사용하여 일치하는 '첫 번째' 요소만 선택합니다.
+        const item = document.querySelector("#item");
+
+        function change() {
+            // 선택된 첫 번째 요소의 스타일을 변경합니다.
+            if (item) {
+                item.style.backgroundColor = "lightgreen";
+                item.style.color = "darkgreen";
+                item.style.fontWeight = "bold";
+                item.style.padding = "10px";
+            }
+        }
+
+        function unChange() {
+            // 스타일을 초기화합니다.
+            if (item) {
+                item.style.backgroundColor = "";
+                item.style.color = "";
+                item.style.fontWeight = "";
+                item.style.padding = "";
+            }
+        }
+        
+    </script>
+</body>
+</html>

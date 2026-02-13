@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+      //오늘날짜
+      //크리스마스 날짜 
+
+
+      //크리스마스 날짜  - 오늘날짜 
+      //밀리초형태  - 밀리초형태    (  초 /1000)   1초  ->  1/1000 (밀리초)
+      
+
+      let today  = new Date(); //현재날짜       
+      let christmas  = new Date(2026 ,11 , 25);  //특정날짜  , 주의사항: 월은  -1 하기 (내부적으로 0월부터 인식)
+
+      //날짜차이
+      let 차이  = christmas -today;
+      console.log( 차이);   //밀리초 
+
+      // 1시간  밀리초 구하기 => 1 *60 *60 *1000 => 
+
+      let 결과일수 =  Math.ceil( 차이 / (60*60*24*1000)) ;
+      alert( 결과일수);
+
+
+      alert( Math.ceil(3.4));
+
+
+    </script>
+    
+</body>
+</html>

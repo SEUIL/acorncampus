@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> class 이름으로 요소, 태그 선택하기</h1>
+    <p>
+        class 이름 item인 요소 선택해서 스타일 변경하기
+    </p>
+    <p>
+        주의사항 : 선택된 요소가 한 개여도 배열로 반환됨 
+    </p>
+
+    <ul>
+        <li class="item">항목 1</li>
+        <li class="item">항목 2</li>
+        <li class="item">항목 3</li>
+    </ul>
+
+    <button id="btn-apply" onclick="change()">클래스 스타일 적용</button>
+    <button id="btn-denay" onclick="unchange()">클래스 스타일 취소</button>
+
+    <!-- --------------------------------------------------------------------------------- -->
+
+    <script>
+        // 1. getElementsByClassName: 클래스 이름을 가진 모든 요소를 선택 (HTMLCollection 반환)
+        const items = document.getElementsByClassName("item");
+        const btn = document.getElementById("btn-apply");
+
+        function change() {
+            // HTMLCollection은 배열과 유사하므로 반복문을 사용하여 각 요소에 접근해야 합니다.
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.color = "blue";
+                items[i].style.fontWeight = "bold";
+                items[i].style.fontSize = "20px";
+            }
+            
+            console.log("선택된 요소 개수:", items.length);
+        };
+
+        function unchange() {
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.color = "";
+                items[i].style.fontWeight = "";
+                items[i].style.fontSize = "";
+            }
+        };
+
+        // 2. querySelectorAll을 사용한 태그 선택 예시
+        const allParagraphs = document.querySelectorAll("p");
+        allParagraphs.forEach(p => {
+            p.style.borderBottom = "1px solid #ccc";
+        });
+    </script>
+    
+</body>
+</html>

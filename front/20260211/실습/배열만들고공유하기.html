@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            3차원 배열로 음식이 적혀있는 배열     
+        */
+
+        let foodMenu = [
+            [ // 한식 
+                ["비빔밥", "김치볶음밥", "불고기덮밥"], // 밥류 
+                ["라면", "비빔면", "잔치국수"],         // 면류 
+                ["김치찌개", "된장찌개", "미역국"],     // 국/찌개 
+                ["제육볶음" , "삽겹살" , "갈비"]        // 고기류
+            ],
+            [ // 일식 
+                ["초밥", "회덮밥", "규동"],            // 밥류 
+                ["우동", "소바", "라멘"],              // 면류 
+                ["돈카츠", "새우튀김", "고로케"]        // 튀김류 
+            ],
+            [ // 중식 
+                ["짜장면", "짬뽕", "우동"],            // 면류 
+                ["볶음밥", "잡채밥", "마파두부덮밥"],   // 밥류 
+                ["탕수육", "깐풍기", "유린기"]         // 튀김/고기류 
+            ],
+            [ // 양식 
+                ["까르보나라", "알리오올리오", "토마토파스타"], // 면류 
+                ["치즈리조또", "해산물필라프 , 피자"],          // 밥류 
+                ["티본스테이크", "함박스테이크", "돈가스"]      // 구이/튀김류 
+            ]
+        ];
+
+        // 카테고리 이름 정의
+        let categories = ["한식", "일식", "중식", "양식"];
+        let subCategories = [
+            ["밥류", "면류", "국/찌개" , "고기류"],      // 한식 
+            ["밥류", "면류", "튀김류"],      // 일식 
+            ["면류", "밥류", "튀김/고기류"],  // 중식 
+            ["면류", "밥류", "구이/튀김류"]   // 양식 
+        ];
+
+        document.write("<h1>음식 메뉴 리스트</h1>");
+
+        for (let i = 0; i < categories.length; i++) {
+            document.write(`<h2>${categories[i]}</h2>`);
+            for (let j = 0; j < subCategories[i].length; j++) {
+                document.write(`<strong>${subCategories[i][j]} : </strong>`);
+                document.writeln(foodMenu[i][j].join(", "))
+                document.writeln("<br>");
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

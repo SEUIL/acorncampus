@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+          화살표함수는  함수표현식의 축약형
+        */
+
+        let 인사하기 =function(){
+            alert("안녕하세요 ^^");
+        } ;
+
+
+        인사하기();
+
+
+        let 인사하기2= ()=>{            
+            alert("안녕하세요2^^");
+        };
+
+
+        인사하기2();
+
+
+
+        //1~10까지 합을 반환하는 함수  
+
+        let hap10 = ()=>{
+
+            let sum=0;
+
+            // 1  2  3  4 5  6 7  8  9   10
+            for( let i=1; i<=10; i++){  
+                sum = sum +i; //55  => 순서도 
+            }
+
+            return sum;
+        };
+
+
+       let result  =  hap10();
+       alert( result);
+
+
+    </script>
+
+
+
+</body>
+</html>

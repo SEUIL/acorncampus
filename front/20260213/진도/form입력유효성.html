@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- form 입력 유효성 -->
+    <form name="frm" action="" method = "get">
+        <input type="text" name="userId">
+        <input type="password" name="userPw">
+        <button type="button" onclick="vaildLogin()">로그인</button>
+    </form>
+
+    <script>
+        function vaildLogin() {
+            // 1. form 요소와 입력 필드 선택
+            const frm = document.frm;
+            const userId = frm.userId.value;
+            const userPw = frm.userPw.value;
+
+            // 2. 유효성 검사 (아이디와 비밀번호가 비어있는지 확인)
+            if (userId === "") {
+                alert("아이디를 입력하세요.");
+                frm.userId.focus();
+                return; // 함수 종료
+            }
+
+            if (userPw === "") {
+                alert("비밀번호를 입력하세요.");
+                frm.userPw.focus();
+                return; // 함수 종료
+            }
+
+            // 3. 모든 검사를 통과하면 서버로 전송
+            alert("로그인 시도: " + userId);
+            frm.submit();
+        }
+    </script>
+</body>
+</html>

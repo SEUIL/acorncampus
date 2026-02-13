@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" placeholder="비번입력" id = "pw" value="1234">
+    
+    <button onclick="toggle()" id="btn">보이기</button>
+
+    <script>
+        const pwInput = document.getElementById("pw");
+        const btn = document.getElementById("btn");
+
+        function toggle() {
+            // input의 type 속성을 체크하여 password면 text로, text면 password로 변경합니다.
+            if (pwInput.type === "password") {
+                pwInput.type = "text";
+                btn.innerText = "숨기기";
+            } else {
+                pwInput.type = "password";
+                btn.innerText = "보이기";
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트가 제공하는 내장객체 (Math , Date, String)
+
+        //Date 
+
+        // 1. 현재 날짜와 시간 가져오기
+        let now = new Date();
+        console.log("현재 시간:", now);
+
+        // 2. 특정 날짜 설정하기 (년, 월-1, 일)
+        // 월은 0부터 시작하므로 2월은 1로 작성합니다.
+        let weddingDay = new Date(2026, 1, 12); 
+        console.log("기념일:", weddingDay);
+
+        // 3. 날짜 정보 각각 가져오기
+        let year = now.getFullYear(); // 년도
+        let month = now.getMonth() + 1; // 월 (0~11이므로 +1 필요)
+        let date = now.getDate(); // 일
+        let day = now.getDay(); // 요일 (0:일요일 ~ 6:토요일)
+        
+        let dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+        console.log(`오늘은 ${year}년 ${month}월 ${date}일 (${dayNames[day]}요일) 입니다.`);
+
+        // 4. 시간 정보 가져오기
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        console.log(`현재 시각은 ${hours}시 ${minutes}분 ${seconds}초입니다.`);
+
+        // 5. 두 날짜 사이의 차이 계산하기 (밀리초 단위)
+        let diff = weddingDay - now;
+        // 밀리초를 일(day) 단위로 변환: 1000(ms) * 60(s) * 60(m) * 24(h)
+        let dDay = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        console.log(`기념일까지 ${dDay}일 남았습니다.`);
+        
+        
+        //Math 
+
+        // 1. 절대값 구하기
+        console.log("절대값:", Math.abs(-10)); // 10
+
+        // 2. 올림, 내림, 반올림
+        console.log("올림(ceil):", Math.ceil(4.2));  // 5
+        console.log("내림(floor):", Math.floor(4.7)); // 4
+        console.log("반올림(round):", Math.round(4.5)); // 5
+
+        // 3. 최대값, 최소값
+        console.log("최대값:", Math.max(10, 20, 5, 30)); // 30
+        console.log("최소값:", Math.min(10, 20, 5, 30)); // 5
+
+        // 4. 랜덤 숫자 생성 (0 이상 1 미만의 부동소수점)
+        let randomNum = Math.random();
+        console.log("랜덤 숫자:", randomNum);
+
+        // 5. 특정 범위의 정수 랜덤 생성 (예: 1~10 사이)
+        let rangeRandom = Math.floor(Math.random() * 10) + 1;
+        console.log("1~10 사이 랜덤 정수:", rangeRandom);
+
+        // 6. 거듭제곱 및 제곱근
+        console.log("2의 3제곱:", Math.pow(2, 3)); // 8
+        console.log("16의 제곱근:", Math.sqrt(16)); // 4
+        
+
+        // String 
+
+        let text = "Hello JavaScript World";
+
+        // 1. 문자열 길이
+        console.log("길이:", text.length);
+
+        // 2. 특정 위치의 문자 찾기
+        console.log("인덱스 6의 문자:", text.charAt(6)); // 'J'
+
+        // 3. 문자열 포함 여부 및 위치 찾기
+        console.log("Java 포함 여부:", text.includes("Java")); // true
+        console.log("World 시작 위치:", text.indexOf("World")); // 17
+
+        // 4. 대소문자 변환
+        console.log("대문자로:", text.toUpperCase());
+        console.log("소문자로:", text.toLowerCase());
+
+        // 5. 문자열 자르기 (시작인덱스, 끝인덱스 직전까지)
+        console.log("부분 문자열:", text.substring(6, 16)); // "JavaScript"
+
+        // 6. 문자열 치환
+        console.log("치환:", text.replace("JavaScript", "Web"));
+
+        // 7. 문자열 분할 (배열로 반환)
+        let words = text.split(" ");
+        console.log("단어 분할:", words); // ["Hello", "JavaScript", "World"]
+
+        // 8. 양 끝 공백 제거
+        let paddingText = "   Hello   ";
+        console.log("공백 제거:", paddingText.trim());
+        
+    </script>
+</body>
+</html>

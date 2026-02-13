@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            width: 100px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+        .b{
+            width: 100px;
+            height: 50px;
+            background-color: skyblue
+        }
+    </style>
+</head>
+<body>
+    <div class="a">item</div>
+    <div class="b">item</div>
+    <button onclick="styleChange()"> 스타일변경하기 </button>
+
+    <script>
+        function styleChange() {
+            const a = document.querySelector(".a");
+            a.classList.replace("a","b")
+            
+        }
+    </script>
+</body>
+</html>

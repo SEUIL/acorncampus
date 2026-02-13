@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+            //1차원배열 문제 만들고 풀어보기
+
+            //1.배열의 내용 출력하기  ( 반복을 사용하여 배열의 요소 :  기억장소 한 개 = 변수와 동일한 역할) 
+
+
+            //            0       1        2   =>배열요소의 순번(첨자)
+            let fruit =["딸기" , "귤"  ,"사과"  ];
+
+            alert(fruit[0]);
+            alert(fruit[1]);
+            alert(fruit[2]);  
+            fruit[3]="망고";
+ 
+            alert( fruit.length); //배열의 길이 (크기)
+
+
+
+            //반복문 직접처리
+            for( let i=0; i< fruit.length ; i++){
+                document.write( "hi ^^" + fruit[i]);
+            }
+
+
+            //배열매서드   forEach  경험하기
+            fruit.forEach(  function(  aa ){
+                alert("hi  ^^" + aa);
+            } );
+
+
+
+    </script>
+</body>
+</html>

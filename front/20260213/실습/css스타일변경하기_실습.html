@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        /* 추가할 스타일 */
+        .active {
+            background-color: lightcoral;
+            color: white;
+            border-radius: 50%;
+        }
+
+        /* 교체될 스타일 */
+        .highlight {
+            background-color: gold;
+            border: 5px dashed red;
+            transform: scale(1.1);
+        }
+    </style>
+
+    <h2>classList 실습 (add, remove, replace)</h2>
+    <div id="myBox" class="box">기본 박스</div>
+
+    <br>
+
+    <button onclick="addClass()">스타일 추가 (add)</button>
+    <button onclick="removeClass()">스타일 제거 (remove)</button>
+    <button onclick="replaceClass()">스타일 교체 (replace)</button>
+    <button onclick="toggleClass()">스타일 토글 (toggle)</button>
+
+    <script>
+        const box = document.getElementById("myBox");
+ 
+        function addClass() {
+            box.classList.add("active");
+            box.innerText = "클래스 추가됨";
+        }
+
+        function removeClass() {
+            box.classList.remove("active");
+            box.classList.remove("highlight");
+            box.innerText = "클래스 제거됨";
+        }
+
+        function replaceClass() {
+            if (box.classList.contains("active")) {
+                box.classList.replace("active", "highlight");
+                box.innerText = "active -> highlight 교체";
+            } else {
+                alert("먼저 '스타일 추가' 버튼을 눌러 active 클래스를 생성하세요.");
+            }
+        }
+
+        function toggleClass() {
+            // 'active' 클래스가 있으면 제거, 없으면 추가합니다.
+            // toggle 메서드는 클래스가 추가되면 true, 제거되면 false를 반환합니다.
+            const isAdded = box.classList.toggle("active");
+
+            if (isAdded) {
+                box.innerText = "'active' 클래스 토글 (추가됨)";
+            } else {
+                box.innerText = "'active' 클래스 토글 (제거됨)";
+            }
+        }
+    </script>
+    
+</body>
+</html>

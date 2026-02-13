@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //문자열   let str="hello";    // =>객체  
+        //문자열을 편리하게 사용할 수 있는 기능(매서드)을 제공하고 있다
+
+        //문자열의 요소(문자)얻어오기 
+        //문자열.charAt()
+
+        let str="hello";
+        let result  =str.charAt(0); //순번 0부터 시작
+        let result1= str.charAt(1);
+        let result2 = str.charAt(2);
+
+        console.log( result);
+
+
+
+        //문자열추출 매서드 사용하기
+        // 문자열.substring()
+        //문자열에서 일부의 가져올 때 사용하는 기능
+
+        let str2= "i like javascript";
+        let  str2Result  = str2.substring(2,6);  //시작인덱스, 끝인덱스
+        console.log(str2Result );
+
+
+        let str2Result3 = str2.substr(2,4); //
+        console.log(str2Result3 );
+
+
+        {
+            //split 구분자로 나눠서  배열로 반환한다.
+            //문자열을 분리해서 사용할때 
+            //문자열.split("-");
+
+            let str ="hi-bye-^^";
+            let result  =str.split("-");
+            console.log( result);
+
+        }
+
+
+        {
+
+            //문자열.indexOf() :문자열 내에서 찾고자하는 문자열의 시작위치를 반환 ( 없으면  -1을 반환)
+
+            let str="i like javascript";
+            let result  = str.indexOf("like");   // 2 
+            let result2  = str.indexOf("applie");     // -1  
+            console.log( result);
+            console.log( result2);  
+        }
+
+
+        // 문자열.startsWith() :특정문자열로 시작하는지   true, false
+        // 문자열.endsWith()   : 특정문자열로 끝나는지   true, false
+
+        {
+
+            let fileName  ="test.html";
+            let 음료="스무디망고";
+
+            console.log( 음료.startsWith("스무디")) ; //true
+            console.log( fileName.endsWith("html")) ; //true
+
+        }
+
+
+
+        {
+
+            //문자열 치환
+            //문자열.replace( "대상", "바꿀문자열");
+            let str=" i like java";
+            let result= str.replace("java", "javascript");
+            console.log( result);
+
+ 
+        }
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

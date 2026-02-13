@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: none;
+        }
+        div.on{ /* div이면서 on클래스 가진 요소를 선택 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 내용 보이기 : 토글 예제 -->
+    <div> 내용 보이기 </div>    
+    <button onclick="toggle()">토글</button>
+    
+    <script>
+        function toggle() {
+            // 1. div 요소를 선택합니다.
+            const div = document.querySelector("div");
+            
+            // 2. classList.toggle()을 사용하여 'on' 클래스를 추가하거나 제거합니다.
+            // 'on' 클래스가 있으면 display: block이 적용되어 화면에 보입니다.
+            div.classList.toggle("on");
+        }
+    </script>
+    
+</body>
+</html>
