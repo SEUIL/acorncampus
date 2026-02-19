@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addATag()">a 태그 생성</button>
+    <div class="result"></div>
+
+    <script>
+        //a 태그 생성
+        function addATag() {
+            // 1. 새로운 a 태그 요소 생성
+            const newA = document.createElement("a");            
+            newA.textContent = "네이버로 이동";
+            newA.href = "https://www.naver.com";
+            newA.target = "_blank"; // 새 창에서 열기
+
+            // 스타일 추가
+            Object.assign(newA.style, {
+                color: "green",
+                textDecoration: "none",
+                fontWeight: "bold",
+                fontSize: "18px"
+            });
+
+            // 2. 부모 영역 선택
+            const resultDiv = document.querySelector(".result");
+
+            // 3. 부모 요소에 추가
+            resultDiv.appendChild(newA);
+        }
+        
+    </script>
+</body>
+</html>

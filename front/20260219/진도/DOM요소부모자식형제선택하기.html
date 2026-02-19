@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>div 태그의 자식요소 선택</h2>
+
+    <div id="movie">
+        <p>아바타</p>
+        <p id="speed">스피드</p>
+        <p>매트릭스</p>
+    </div>
+
+    <button onclick="getMovie1()">첫 번째 영화</button>
+    <button onclick="getMovie2()">두 번째 영화</button>
+    <button onclick="getMovie3()">세 번째 영화</button>
+    <button onclick="getParent()">스피드태그의 부모요소 가져오기</button>
+
+
+    <script>
+        //movie(부모)를 자식요소 찾기 (얻어오기);
+        function getMovie1() {
+            const movie = document.getElementById("movie");
+            const result = movie.firstElementChild;
+            alert(result.innerHTML)
+        }
+
+        function getMovie2() {
+            const movie = document.getElementById("movie");
+            const result = movie.firstElementChild.nextElementSibling;
+            alert(result.innerHTML)
+        }
+
+        function getMovie3() {
+            const movie = document.getElementById("movie")
+            const item = movie.lastElementChild;
+            alert(item.innerHTML)
+        }
+
+        function getParent(){
+            const speed = document.getElementById("speed");
+            const result = speed.parentElement;
+            console.log(result)
+        }
+
+
+    </script>
+</body>
+
+</html>

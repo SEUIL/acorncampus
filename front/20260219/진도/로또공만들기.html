@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 문제 ) 로또공 6개 띄우기
+            1. 로또 번호 만들기 (6)
+            2. 로또 공 6개 만들기
+                2.1 부모영역 선택
+                2.2 반복 6번
+                    - div 태그 생성하기
+                    - 스타일 주기
+                    - 로또번호 넣기
+                    - 부모영역에 추가하기 
+    -->
+
+    <button onclick="printLottoNumber()"> 로또 번호 생성</button>
+    <div class="lottoList"></div>
+
+
+
+    <script>
+        function getLottoNumber() {
+            const lottoNumbers = [];
+            while (lottoNumbers.length < 6) {
+                const randomNumber = Math.floor(Math.random() * 45) + 1;
+                if (!lottoNumbers.includes(randomNumber)) {
+                    lottoNumbers.push(randomNumber);
+                }
+            }
+            return lottoNumbers;
+        }
+
+        function printLottoNumber() {
+            const lottoNumbers = getLottoNumber();
+
+            const lottoList = document.querySelector(".lottoList");
+            lottoList.innerHTML = '';
+
+            lottoNumbers.forEach(number => {
+                const lottoDiv = document.createElement("div");
+
+                lottoDiv.textContent = number;
+
+                Object.assign(lottoDiv.style, {
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: "gold",
+                    borderRadius: "50%",
+                    display: "inline-flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    margin: "5px",
+                    fontWeight: "bold",
+                    border: "2px solid #333"
+                });
+
+                lottoList.appendChild(lottoDiv);
+            });
+        }
+
+
+
+    </script>
+</body>
+
+</html>

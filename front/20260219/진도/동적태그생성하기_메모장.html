@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .newLiTag{
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 메모장 기능 -->
+     
+    <h1>간단 메모장</h1>
+    <input type="text" id="memoInput" placeholder="메모를 입력하세요">
+    <button onclick="addMemo()">추가</button>
+    <button onclick="deleteMemo()">삭제</button>
+    
+    <ul id="memoList">
+        <!-- 메모가 추가될 영역 -->
+    </ul>
+
+    <script>
+        function addMemo() {
+            // 1. 입력창과 리스트 영역 선택
+            const memoInput = document.getElementById("memoInput");
+            const memoList = document.getElementById("memoList");
+
+            // 입력값이 비어있는지 확인
+            if (memoInput.value.trim() === "") {
+                alert("내용을 입력해주세요!");
+                return;
+            }
+
+            // 2. 새로운 li 태그 생성
+            const newLi = document.createElement("li");
+            newLi.textContent = memoInput.value;
+            newLi.classList.add("newLiTag");
+
+            // 3. 부모 요소(ul)에 추가
+            memoList.appendChild(newLi);
+
+            // 4. 입력창 초기화 및 포커스
+            memoInput.value = "";
+            memoInput.focus();
+        }
+
+        function deleteMemo() {
+            // 1. 리스트 영역 선택
+            const memoList = document.getElementById("memoList");
+            
+            // 2. 마지막 자식 요소(가장 최근 메모) 선택
+            const lastMemo = memoList.lastElementChild;
+
+            // 3. 삭제할 메모가 있는지 확인 후 삭제
+            if (lastMemo) {
+                memoList.removeChild(lastMemo);
+            } else {
+                alert("삭제할 메모가 없습니다!");
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

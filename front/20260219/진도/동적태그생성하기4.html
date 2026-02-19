@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addImgTag()">이미지태그생성</button>
+    <div class="result"></div>
+
+    <script>
+        // 이미지 태그 생성 함수
+        function addImgTag() {
+            // 1. 새로운 img 태그 요소 생성
+            const newImg = document.createElement("img");
+            
+            // 2. 속성 설정 (이미지 경로, 대체 텍스트, 너비 등)
+            newImg.src = "../../images/1.jpg"; // 샘플 이미지 경로
+            newImg.alt = "샘플 이미지";
+            
+            // 스타일 추가
+            Object.assign(newImg.style, {
+                border: "2px solid #333",
+                borderRadius: "10px",
+                marginTop: "10px",
+                display: "block"
+            });
+
+            // 3. 부모 영역 선택
+            const resultDiv = document.querySelector(".result");
+
+            // 4. 부모 요소에 추가
+            resultDiv.appendChild(newImg);
+        }
+        
+    </script>
+</body>
+</html>

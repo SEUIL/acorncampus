@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            display: flex;
+            border: 1px solid black;
+            padding: 10px;
+            width: 500px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 자신기준으로가까운요소찾기 -->
+    <div class="item">
+        <div><input type="text" class="inputA"></div>
+        <div><button onclick="getContent(this)">클릭</button></div>
+    </div>
+
+    <div class="item">
+        <div><input type="text" class="inputA"></div>
+        <div><button onclick="getContent2(this)">클릭</button></div>
+    </div>
+
+    <div class="item">
+        <div><input type="text" class="inputA"></div>
+        <div><button onclick="getContent3(this)">클릭</button></div>
+    </div>
+
+
+    <script>
+
+        function getContent(obj) {
+            const item = obj.closest(".item");
+            const input = item.querySelector(".inputA");
+            alert(input.value);
+        }
+
+        function getContent2(obj) {
+            const item = obj.parentElement.parentElement;
+            const input = item.querySelector(".inputA");
+            alert(input.value);
+        }
+
+        function getContent3(obj) {
+            const item = obj.parentElement;
+            const input = item.previousElementSibling.firstElementChild;
+            alert(input.value);
+        }
+
+    </script>
+</body>
+
+</html>

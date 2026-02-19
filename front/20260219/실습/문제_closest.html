@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item{
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="item">
+         <div class="treasure">금100돈</div>
+         <button onclick="getContent(this)">클릭</button>
+    </div>
+
+
+
+     <div class="item">
+         <div class="treasure">다이아몬드 10캐럿</div>
+         <button onclick="getContent(this)">클릭</button>
+    </div>
+
+    <script>
+        function getContent(obj){
+            const item = obj.closest(".item");
+            const treasure = item.querySelector(".treasure");
+            alert(treasure.textContent + "을 획득했습니다.");
+        }
+    </script>
+</body>
+</html>

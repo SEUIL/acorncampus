@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addSpan()">span 태그 생성</button> <br>
+
+    <div class="result"></div><br>
+
+    <script>
+        function addSpan() {
+            // 1. 새로운 span 태그 요소 생성
+            const newSpan = document.createElement("span");
+            newSpan.textContent = "새로 생성된 span 태그입니다.";
+            // newSpan.classList.add("") //
+
+            Object.assign(newSpan.style,{
+                color: "red",
+                fontSize: "20px",
+                fontWeight: "bold",
+                display: "flex" //
+
+            })
+
+            //2. 부모영역 선택
+            const resultDiv = document.querySelector(".result");
+
+            // 3. 부모 요소에 추가
+            resultDiv.appendChild(newSpan);
+            
+        }
+        
+    </script>
+</body>
+</html>
