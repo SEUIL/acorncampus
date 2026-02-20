@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-box {
+            width: 500px;
+            height: 400px;
+            background-color: gray;
+
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 150px;
+            background-color: red;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* left,right,top,bottom -> 디폴트 position에서는 적용 안됌 */
+
+            /* 현재 박스 크기에서 중앙으로 이동시키기 */
+            transform: translate(-50%, -50%); 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 요소를 정가운데에 위치하게 하는법 4 -->
+    <div class="outer-box">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이벤트 객체</h2>
+
+    <p>이벤트가 발생하면 이벤트에 관련된 정보가 객체형태로 만들어진다.</p>
+    <p>이벤트 객체는 이벤트핸들러 함수에게 전달됨 (자동으로)</p>
+
+    <input type="text" placeholder="검색어" id="search">
+
+    <script>
+        //keyup 이벤트 
+        //onkeyup 이벤트리스너
+        //function test(){ } 이벤트 핸들러 함수
+        
+        const searchInput = document.getElementById('search');
+
+        searchInput.onkeyup = function(event) {
+            // event 객체에는 발생한 이벤트에 대한 상세 정보가 담겨 있습니다.
+            console.log(event);
+            
+            // 사용자가 누른 키의 값 확인
+            console.log('입력한 키:', event.key);
+            
+            // 엔터 키를 눌렀을 때만 특정 동작 수행
+            if (event.key === 'Enter') {
+                alert(event.target.value + '(으)로 검색을 시작합니다.');
+            }
+        };
+        
+        
+    </script>
+</body>
+</html>

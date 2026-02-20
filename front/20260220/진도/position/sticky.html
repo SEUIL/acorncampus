@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>에이콘 아카데미 - Sticky 실습</title>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ⭐ 핵심: Sticky 속성 적용 */
+        .sticky-bar {
+            position: sticky;
+            top: 0; /* 화면 최상단에 달라붙음 */
+            background-color: #ffeb3b;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #fbc02d;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .content-section {
+            height: 800px; /* 스크롤을 만들기 위한 긴 높이 */
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px dashed #ccc;
+        }
+
+        .parent-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            height: 500px; /* 부모의 높이가 끝나면 sticky도 멈춤 */
+            border: 2px solid #2196f3;
+            margin-top: 50px;
+        }
+
+        footer {
+            height: 300px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CSS position: sticky 학습하기</h1>
+        <p>에이콘 아카데미와 함께하는 프론트엔드 실습</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>1. 스크롤을 내려보세요</h2>
+            <p>아래에 있는 노란색 바가 화면 상단에 닿는 순간 고정될 거예요.</p>
+        </div>
+
+        <div class="sticky-bar">
+            나를 봐! 나는 여기서부터 고정되어 따라갈 거야! (top: 0)
+        </div>
+
+        <div class="content-section">
+            <h2>2. 계속 내려보세요</h2>
+            <p>보통 fixed는 페이지 끝까지 따라오지만, sticky는 다릅니다.</p>
+            <p>만약 제가 어떤 박스(부모) 안에 들어있다면, 그 박스가 화면에서 사라질 때 같이 사라집니다.</p>
+        </div>
+
+        <div class="parent-box">
+            <div style="position: sticky; top: 10px; background: white; padding: 10px; border: 1px solid red;">
+                부모 박스 안의 Sticky: 저는 이 파란 박스 안에서만 움직여요!
+            </div>
+            <p style="margin-top: 100px;">이 파란색 부모 영역이 끝나면 저도 위로 올라가 버립니다.</p>
+        </div>
+
+        <div class="content-section" style="height: 1000px;">
+            <h2>3. 관찰 포인트</h2>
+            <ul>
+                <li><strong>top 속성 필수:</strong> 어느 위치에서 멈출지 정해줘야 합니다.</li>
+                <li><strong>부모 요소 확인:</strong> 부모 요소에 <code>overflow: hidden</code>이 있으면 작동하지 않을 수 있으니 주의하세요!</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 에이콘 아카데미 실습 페이지</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[에이콘 아카데미] 이벤트 학습 페이지</title>
+    <style>
+        :root {
+            --main-color: #2196f3;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--main-color);
+            border-bottom: 2px solid var(--main-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #444;
+            background: #e3f2fd;
+            padding: 10px;
+            border-left: 5px solid var(--main-color);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+
+        .result-panel {
+            background: #333;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            min-height: 50px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            cursor: pointer;
+            background: var(--main-color);
+            color: white;
+            border: none;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1976d2;
+        }
+
+        .scroll-area {
+            height: 100px;
+            overflow-y: scroll;
+            border: 1px solid red;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Event Study</h1>
+        <p>보내주신 이론 내용을 바탕으로 작성된 실습 페이지입니다. 콘솔창(F12)과 함께 확인해보세요!</p>
+
+        <section>
+            <h2>1. 이벤트를 처리하는 3가지 방법</h2>
+
+            <div class="box">
+                <p><strong>1) HTML 태그 직접 사용:</strong> 태그 안에 <code>onclick</code> 속성 사용</p>
+                <button onclick="log('1번 방법: HTML 태그 직접 사용 클릭됨!')">HTML 태그 클릭</button>
+            </div>
+
+            <div class="box">
+                <p><strong>2) DOM 속성 사용:</strong> <code>element.onclick = function</code></p>
+                <button id="btn-property">DOM 속성 클릭</button>
+            </div>
+
+            <div class="box">
+                <p><strong>3) addEventListener:</strong> 가장 권장되는 방식</p>
+                <button id="btn-listener">addEventListener 클릭</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 처리 방식의 차이 (중복 등록)</h2>
+            <div class="box">
+                <p>아래 버튼들은 각각 '메시지 1'과 '메시지 2'를 출력하는 함수가 2번 등록되어 있습니다.</p>
+                <button id="diff-property">속성 방식 (대체됨)</button>
+                <button id="diff-listener">Listener 방식 (둘 다 실행)</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 이벤트 객체(Event Object) 정보</h2>
+            <div class="box">
+                <p>버튼을 클릭하면 이벤트 객체로부터 <strong>target</strong>과 <strong>type</strong> 정보를 추출합니다.</p>
+                <button id="btn-obj">이벤트 객체 확인</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 다양한 이벤트 종류 실습</h2>
+            <div class="box">
+                <p><strong>Focus & Blur:</strong> 입력창을 클릭했다가 바깥을 클릭해보세요.</p>
+                <input type="text" id="input-focus" placeholder="여기를 클릭(focus)해보세요">
+            </div>
+
+            <div class="box">
+                <p><strong>Change:</strong> 값을 입력하고 포커스를 옮기거나 엔터를 쳐보세요.</p>
+                <input type="text" id="input-change" placeholder="내용을 바꾸고 바깥 클릭">
+            </div>
+
+            <div class="box">
+                <p><strong>Scroll:</strong> 아래 빨간 박스 안에서 스크롤해보세요.</p>
+                <div class="scroll-area" id="scroll-zone">
+                    스크롤 테스트...<br><br><br><br><br><br><br><br>끝까지 내려보세요!
+                </div>
+            </div>
+        </section>
+
+        <div class="result-panel" id="result">로그가 여기에 표시됩니다.</div>
+    </div>
+
+    <script>
+        const resultDiv = document.getElementById('result');
+
+        // 로그 출력용 함수
+        function log(msg) {
+            const now = new Date().toLocaleTimeString();
+            resultDiv.innerText = `[${now}] ${msg}\n` + resultDiv.innerText;
+            console.log(`[${now}] ${msg}\n` + resultDiv.innerText)
+        }
+
+        // --- 1. 이벤트 처리 방법 실습 ---
+        // 2) DOM 속성 방식
+        document.getElementById('btn-property').onclick = function () {
+            log('2번 방법: DOM 속성 방식으로 클릭됨!');
+        };
+
+        // 3) addEventListener 방식
+        document.getElementById('btn-listener').addEventListener('click', function () {
+            log('3번 방법: addEventListener 방식으로 클릭됨!');
+        });
+
+
+        // --- 2. 속성 vs addEventListener 차이 실습 ---
+        const diffProp = document.getElementById('diff-property');
+        diffProp.onclick = function () { log('속성: 첫 번째 함수 실행 (곧 지워짐)'); };
+        diffProp.onclick = function () { log('속성: 두 번째 함수 실행 (이것만 남음)'); };
+
+        const diffList = document.getElementById('diff-listener');
+        diffList.addEventListener('click', function () { log('Listener: 첫 번째 함수 실행'); });
+        diffList.addEventListener('click', function () { log('Listener: 두 번째 함수 실행'); });
+
+
+        // --- 3. 이벤트 객체 활용 ---
+        document.getElementById('btn-obj').addEventListener('click', function (event) {
+            // 핸들러 함수에게만 event 객체가 자동 전달됨
+            const targetId = event.target.id;
+            const eventType = event.type;
+            log(`객체 정보 -> 타겟ID: ${targetId}, 이벤트타입: ${eventType}`);
+        });
+
+
+        // --- 4. 다양한 이벤트 종류 ---
+        const focusInput = document.getElementById('input-focus');
+        focusInput.onfocus = () => log('Focus: 입력창에 들어옴');
+        focusInput.onblur = () => log('Blur: 입력창에서 나감');
+
+        const changeInput = document.getElementById('input-change');
+        changeInput.onchange = (e) => log(`Change: 값이 '${e.target.value}'(으)로 변경됨`);
+
+        const scrollZone = document.getElementById('scroll-zone');
+        scrollZone.onscroll = () => log('Scroll: 영역 안에서 스크롤 중...');
+
+        // 리소스 이벤트 (Load)
+        window.onload = () => log('Load: 페이지의 모든 리소스 로드 완료!');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 스크롤을 만들기 위해 body에 높이 설정 */
+        body {
+            height: 2000px;
+        }
+
+        .fixed-box {
+            position: fixed;
+            /* 뷰포트를 기준으로 위치 고정 */
+            bottom: 30px;
+            right: 30px;
+            width: 120px;
+            padding: 15px;
+            background-color: gold;
+            border: 2px solid darkorange;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px;
+        }
+
+        li:nth-child(1) {
+            background-color: lightcoral;
+        }
+
+        li:nth-child(2) {
+            background-color: lightgreen;
+        }
+
+        li:nth-child(3) {
+            background-color: lightblue;
+        }
+
+        li:nth-child(4) {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="fixed-box">
+        Fixed Box
+    </div>
+
+    <h1>Position: Fixed 예제</h1>
+    <p>
+        <strong>position: fixed;</strong>는 요소를 뷰포트(브라우저 창)에 대해 상대적으로 배치합니다.<br>
+        따라서 페이지가 스크롤되더라도 항상 같은 위치에 고정되어 있습니다.<br>
+        주로 상단 네비게이션 바, '맨 위로 가기' 버튼 등에 사용됩니다.
+    </p>
+    <p>아래로 스크롤하여 오른쪽 하단의 노란색 박스가 움직이지 않는 것을 확인해보세요.</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+    </ul>
+</body>
+
+
+</html>

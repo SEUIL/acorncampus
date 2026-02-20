@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이벤트 속성 -->
+     <button id="btn1">클릭1</button>
+     <button id="btn2">클릭2</button>
+
+
+     <script>
+        //이벤트 처리할 대상을 선택하기
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        btn1.onclick = function(){
+            alert("이벤트 속성으로 처리하기1")
+        }
+        btn1.onclick = function(){
+            alert("이벤트 속성으로 처리하기2") //마지막으로 등록되었기에 얘만 남음
+        }
+     </script>
+</body>
+</html>
