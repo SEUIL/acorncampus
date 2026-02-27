@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="d2codingfont-master">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/front/d2codingfont-master/D2Coding-Ver1.3-20171129.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/d2codingfont-master/D2Coding-Ver1.2-20161021.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/d2codingfont-master/D2Coding-Ver1.3.2-20180524.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/d2codingfont-master/D2Coding-Ver1.0-TTC-20150911.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/d2codingfont-master/D2Coding-Ver1.1-TTC-20151103.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

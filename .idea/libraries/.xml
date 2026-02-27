@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="백업">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/front/백업/day05.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day04.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/시험연습_샘플.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day06.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/시험준비.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day07.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day01.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day02.zip!/" />
+      <root url="jar://$PROJECT_DIR$/front/백업/day03.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
