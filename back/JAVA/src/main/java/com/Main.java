@@ -1,6 +1,8 @@
 package com;
 
-import com.d0227.SumAndAverage;
+import com.d0227.*;
+import com.d0304.*;
+import com.d0305.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +17,11 @@ public class Main {
 //        new CalculateScore(); //점수 평균 + 등급
 //        new CalculateGeometricSequence(); //등비수열 계산
 //        new SumAndAverage(); //수의 합과 평균
+
+        //0304
+//        new SalaryCalculator();//사원의 급여 계산
+//        ScheduleList list = new ScheduleList(); list.run(); //일정관리 프로그램
+        new ConditionalGugudan();
 
 
     }

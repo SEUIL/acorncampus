@@ -15,7 +15,7 @@ public class FibonacciSequence {
      * 수열을 생성하는 기본 규칙은 처음 두 항은 1이고, 세 번째 항부터는 바로 앞의 두 항의 합이 된다는 것이다.
      */
 
-    private final List<Long> fibonacciSequence;
+    private final List<Long> fibonacciSequence; //배열
 
     public FibonacciSequence() {
         this.fibonacciSequence = new ArrayList<>();
@@ -30,7 +30,7 @@ public class FibonacciSequence {
     private void fibonacciSequence() {
         long first = 1;
 
-        fibonacciSequence.add(first);
+        fibonacciSequence.add(first); //
         fibonacciSequence.add(first);
         for (int i = 2; i < 50; i++){
             fibonacciSequence.add(fibonacciSequence.get(i - 1) + fibonacciSequence.get(i - 2));
