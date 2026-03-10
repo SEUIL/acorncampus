@@ -3,6 +3,8 @@ package com;
 import com.d0227.*;
 import com.d0304.*;
 import com.d0305.*;
+import com.d0306.*;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -20,9 +22,12 @@ public class Main {
 
         //0304
 //        new SalaryCalculator();//사원의 급여 계산
-//        ScheduleList list = new ScheduleList(); list.run(); //일정관리 프로그램
-        new ConditionalGugudan();
 
+        //0305
+//        ScheduleList list = new ScheduleList(); list.run(); //일정관리 프로그램
+//        new ConditionalGugudan(); //조건부 구구단
+//        OrderInfo info = new OrderInfo(); info.run(); //주문 프로그램
+//        new OperatorValidator(); //연산자 검증 프로그램
 
     }
 }
