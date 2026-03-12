@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MyMathLibTest">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyMathLibTest</output-path>
+    <root id="archive" name="MyMathLibTest.jar">
+      <element id="directory" name="com">
+        <element id="directory" name="d0312">
+          <element id="directory" name="progress">
+            <element id="file-copy" path="$PROJECT_DIR$/target/classes/com/d0312/progress/MyMathLib.class" />
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
