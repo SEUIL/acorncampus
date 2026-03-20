@@ -1,5 +1,8 @@
 package com.d0316.progress;
 
+import lombok.Getter;
+import lombok.Setter;
+
 
 //  AcornStudent s  = new AcornStudent();   //  변수만들기 , 객체생성기
 
@@ -8,15 +11,18 @@ package com.d0316.progress;
 // 캡슐화
 // 데이타+ 매서드(함수) 묶음
 // 매서드가 하는 역할이 데이터를 사용한다 ( 데이터변경하거나, 단순히 읽기)
+
+@Getter
+@Setter
 public class AcornStudent황스일 {
 
     // 속성
-    String name;
-    int 에너지;
-    int 근육량;
-    int 자바능력;
-    int 프론트능력;
-    int 스트레스; //스일 추가
+    private String name;
+    private int 에너지;
+    private int 근육량;
+    private int 자바능력;
+    private int 프론트능력;
+    private int 스트레스; //스일 추가
 
     // 기능(매서드, 함수)
     // 매서드를 통해서 변수를 사용한다	   (데이터를 사용하는 기능)

@@ -1,4 +1,4 @@
-package javaprj.day08;
+package com.d0312.progress;
 
 import java.util.Scanner;
 
